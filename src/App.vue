@@ -40,9 +40,14 @@
     </v-app-bar>
     <!--  Sidebar  -->
     <v-row>
+      <v-col class="col-9 pt-12 pl-12">
+        <router-view></router-view>   
+      </v-col>
       <v-col class="col-3">
       <v-navigation-drawer
             permanent
+            absolute
+            right
             expand-on-hover
           >
             <v-list>
@@ -79,9 +84,6 @@
               </v-list-item>
             </v-list>
           </v-navigation-drawer>
-      </v-col>
-      <v-col class="col-9 pt-12 pr-12">
-        <router-view></router-view>   
       </v-col>
     </v-row> 
   </v-app>
