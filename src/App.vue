@@ -1,11 +1,11 @@
 <template>
   <v-app>
     <v-row>
+      <v-col class="col-3 pt-3 pr-12">
+        <v-menu :items="items"></v-menu>
+      </v-col>
       <v-col class="col-9 pt-12 pl-12">
         <router-view></router-view>   
-      </v-col>
-      <v-col class="col-3 pt-12 pr-12">
-        <v-menu :items="items"></v-menu>
       </v-col>
     </v-row> 
   </v-app>
@@ -24,22 +24,22 @@ export default {
     items: [
         {
           icon: 'mdi-inbox',
-          text: 'Inbox',
+          text: 'דואר נכנס',
           link: '/'
         },
         {
           icon: 'mdi-star',
-          text: 'Star',
+          text: 'מועדפים',
           link: 'pp'
         },
         {
           icon: 'mdi-send',
-          text: 'Send',
+          text: 'שלח הודעה',
           link: 'pp'
         },
         {
           icon: 'mdi-email-open',
-          text: 'Drafts',
+          text: 'טיוטות',
           link: 'pp'
         },
       ]
@@ -47,4 +47,5 @@ export default {
 };
 </script>
 <style scoped>
+
 </style>

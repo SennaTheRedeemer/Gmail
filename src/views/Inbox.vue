@@ -1,8 +1,8 @@
 <template>
-  <v-app>
-    <v-display-mails :items="items"></v-display-mails>
+  <v-container>
+    <v-display-mails :items="items" :title="'דואר נכנס'"></v-display-mails>
     <v-display-mail :mail="selectedMail"></v-display-mail>
-  </v-app>
+  </v-container>
 </template>
 
 <script>
@@ -18,12 +18,20 @@ export default {
   data: () => ({
       selectedMail: {
         id: 1,
-        title: 'Hi',
-        sent: '15 min',
-        from: 'Ofir Norani',
-        content: "Hello World"
+        title: 'שלום אופיר',
+        sent: '15 דקות',
+        from: 'יובל דייזי',
+        content: "הי אופיר מה קורה אתה בא היום"
       },
       items: [
+        {
+          icon: 'mdi-star',
+          text: 'PLACEHOLDER',
+        },
+        {
+          icon: 'mdi-star',
+          text: 'PLACEHOLDER',
+        },
         {
           icon: 'mdi-star',
           text: 'PLACEHOLDER',

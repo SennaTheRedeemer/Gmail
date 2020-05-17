@@ -1,6 +1,23 @@
 <template>
-    <v-card class="ml-4 mt-12 pt-12">
-      <v-card-title>Incoming Mail</v-card-title>
+    <v-card 
+        id="scroll-target"
+        class="ml-4 overflow-hidden">
+      <v-app-bar
+      dark
+      color="primary"
+      absolute
+      elevate-on-scroll
+      scroll-target="#mails"
+    >
+      <v-toolbar-title>{{title}}</v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-app-bar>
+
+    <v-sheet
+      id="mails"
+      class="overflow-y-auto"
+      max-height="300"
+    >
       <v-list>
         <v-list-item-group v-model="model">
           <v-list-item
@@ -16,16 +33,18 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
+    </v-sheet>
     </v-card>
 </template>
 <script>
 export default {
     name: 'DisplayMails',
     props: {
-        items: Array
+        items: Array,
+        title: String
     },
      data: () => ({
-        model: 1,
+        model: null,
     }),
 }
 </script>
