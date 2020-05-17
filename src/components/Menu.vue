@@ -1,6 +1,6 @@
 <template>
     <v-mailcard :title="'תפריט'" :maxHeight="500" class="pt-12 mt-12">
-      <v-list>
+      <v-list class="viewCard">
         <v-list-item-group v-model="model">
           <v-list-item
             v-for="(item, i) in items"

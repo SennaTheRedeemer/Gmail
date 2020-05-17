@@ -2,10 +2,9 @@
     <v-card 
     id="scroll-target"
     class="ml-4 overflow-hidden">
-
         <v-app-bar
         absolute
-        color="blue lighten-5"
+        color="blue lighten-2"
         elevate-on-scroll
         scroll-target="#scrollable"
         >
@@ -15,11 +14,12 @@
 
         <v-sheet
         id="scrollable"
-        class="overflow-y-auto pt-12"
+        class="pt-12 overflow-y-auto viewCard"
         :max-height="maxHeight"
         >
-        <slot></slot>
+            <slot></slot>
         </v-sheet>
+        
     </v-card>
 </template>
 <script>
@@ -31,3 +31,8 @@ export default {
     },
 }
 </script>
+<style>
+.viewCard {
+    background-color: #BBDEFB !important;
+}
+</style>

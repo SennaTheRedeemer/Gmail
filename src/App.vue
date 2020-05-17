@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app class="appView">
     <v-row>
       <v-col class="col-3 pt-3 pr-12">
         <v-menu :items="items"></v-menu>
@@ -47,5 +47,7 @@ export default {
 };
 </script>
 <style scoped>
-
+.appView {
+  background-color: #E3F2FD !important;
+}
 </style>

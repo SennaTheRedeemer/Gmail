@@ -1,6 +1,6 @@
 <template>
     <v-mailcard :title="title" :maxHeight="300" >
-      <v-list>
+      <v-list class="viewCard">
         <v-list-item-group v-model="model">
           <v-list-item
             v-for="(item, i) in items"
@@ -18,7 +18,7 @@
     </v-mailcard>
 </template>
 <script>
-import MailCard from "../components/MailCard.vue"
+import MailCard from "../components/MailCard.vue";
 
 export default {
     name: 'DisplayMails',
@@ -27,7 +27,7 @@ export default {
         title: String
     },
     components: {
-        'v-mailcard': MailCard
+        'v-mailcard': MailCard,
     },
      data: () => ({
         model: null,
