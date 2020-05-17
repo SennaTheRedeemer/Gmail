@@ -3,8 +3,6 @@
         id="scroll-target"
         class="ml-4 overflow-hidden">
       <v-app-bar
-      dark
-      color="primary"
       absolute
       elevate-on-scroll
       scroll-target="#mails"
@@ -15,7 +13,7 @@
 
     <v-sheet
       id="mails"
-      class="overflow-y-auto"
+      class="overflow-y-auto pt-12"
       max-height="300"
     >
       <v-list>
@@ -25,7 +23,7 @@
             :key="i"
           >
             <v-list-item-icon>
-              <v-icon v-text="item.icon"></v-icon>
+              <v-checkbox :on-icon="item.icon" :off-icon="item.icon" color="#FFD600"></v-checkbox>
             </v-list-item-icon>
             <v-list-item-content>
               <v-list-item-title v-text="item.text"></v-list-item-title>

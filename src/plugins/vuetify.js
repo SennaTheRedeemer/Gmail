@@ -1,12 +1,20 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib';
 import '@fortawesome/fontawesome-free/css/all.css'
+import colors from 'vuetify/es5/util/colors'
 
-Vue.use(Vuetify);
+Vue.use(Vuetify, {
+  theme: {
+    primary: colors.purple,
+    secondary: colors.grey.darken1,
+    accent: colors.shades.black,
+    error: colors.red.accent3
+  }
+});
 
 export default new Vuetify({
     icons: {
         iconfont: 'fa',
       },
-    rtl: true
+    rtl: true,
 });

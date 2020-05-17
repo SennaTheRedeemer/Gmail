@@ -1,9 +1,6 @@
 <template>
     <v-card class="ml-4 mt-12" v-if="mail">
-    <v-app-bar
-      dark
-      color="primary"
-    >
+    <v-app-bar>
       <v-toolbar-title>{{mail.title}}</v-toolbar-title>
 
       <v-spacer></v-spacer>

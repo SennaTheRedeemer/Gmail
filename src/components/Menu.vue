@@ -2,7 +2,6 @@
     <v-card class="ml-4 mt-12" height="510">
       <v-app-bar
       dark
-      color="primary"
     >
       <v-toolbar-title>תפריט</v-toolbar-title>
       <v-spacer></v-spacer>
