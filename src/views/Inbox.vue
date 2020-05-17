@@ -10,7 +10,7 @@ import DisplayMails from '../components/DisplayMails.vue'
 import DisplayMail from '../components/DisplayMail.vue'
 
 export default {
-  name: 'Home',
+  name: 'Inbox',
   components: {
     'v-display-mails': DisplayMails,
     'v-display-mail': DisplayMail
