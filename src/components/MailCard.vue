@@ -2,8 +2,10 @@
     <v-card 
     id="scroll-target"
     class="ml-4 overflow-hidden">
+
         <v-app-bar
         absolute
+        color="blue lighten-5"
         elevate-on-scroll
         scroll-target="#scrollable"
         >
