@@ -1,11 +1,12 @@
 <template>
     <v-card 
+    rounded
     id="scroll-target"
-    class="ml-4 overflow-hidden">
+    class="ml-4 overflow-hidden rounded">
         <v-app-bar
         absolute
-        color="red accent-1"
-        elevate-on-scroll
+        color="amber lighten-3"
+        elevate-on-scroll 
         scroll-target="#scrollable"
         >
             <v-toolbar-title>{{title}}</v-toolbar-title>
@@ -33,6 +34,9 @@ export default {
 </script>
 <style>
 .viewCard {
-    background-color: #FFFBEE !important;
+    background-color: #FFFDE7 !important;
+}
+.rounded {
+    border-radius: 15px !important;
 }
 </style>
