@@ -1,21 +1,5 @@
 <template>
-    <v-card 
-        id="scroll-target"
-        class="ml-4 overflow-hidden">
-      <v-app-bar
-      absolute
-      elevate-on-scroll
-      scroll-target="#mails"
-    >
-      <v-toolbar-title>{{title}}</v-toolbar-title>
-      <v-spacer></v-spacer>
-    </v-app-bar>
-
-    <v-sheet
-      id="mails"
-      class="overflow-y-auto pt-12"
-      max-height="300"
-    >
+    <v-mailcard :title="title" :maxHeight="300" >
       <v-list>
         <v-list-item-group v-model="model">
           <v-list-item
@@ -31,15 +15,19 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
-    </v-sheet>
-    </v-card>
+    </v-mailcard>
 </template>
 <script>
+import MailCard from "../components/MailCard.vue"
+
 export default {
     name: 'DisplayMails',
     props: {
         items: Array,
         title: String
+    },
+    components: {
+        'v-mailcard': MailCard
     },
      data: () => ({
         model: null,

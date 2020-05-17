@@ -1,11 +1,5 @@
 <template>
-    <v-card class="ml-4 mt-12" height="510">
-      <v-app-bar
-      dark
-    >
-      <v-toolbar-title>תפריט</v-toolbar-title>
-      <v-spacer></v-spacer>
-    </v-app-bar>
+    <v-mailcard :title="'תפריט'" :maxHeight="500" class="pt-12 mt-12">
       <v-list>
         <v-list-item-group v-model="model">
           <v-list-item
@@ -21,13 +15,18 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
-    </v-card>
+    </v-mailcard>
 </template>
 <script>
+import MailCard from "../components/MailCard.vue"
+
 export default {
     name: 'Menu',
     props: {
         items: Array
+    },
+    components: {
+        'v-mailcard': MailCard
     },
      data: () => ({
         model: 0,
