@@ -1,5 +1,5 @@
 <template>
-    <v-mailcard :title="title" :maxHeight="300" >
+    <v-mailcard :title="title" :maxHeight="550" >
       <v-list class="viewCard">
         <v-list-item-group v-model="model">
           <v-list-item

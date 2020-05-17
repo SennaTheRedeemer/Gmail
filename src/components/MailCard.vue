@@ -4,7 +4,7 @@
     class="ml-4 overflow-hidden">
         <v-app-bar
         absolute
-        color="blue lighten-2"
+        color="red accent-1"
         elevate-on-scroll
         scroll-target="#scrollable"
         >
@@ -33,6 +33,6 @@ export default {
 </script>
 <style>
 .viewCard {
-    background-color: #BBDEFB !important;
+    background-color: #FFFBEE !important;
 }
 </style>

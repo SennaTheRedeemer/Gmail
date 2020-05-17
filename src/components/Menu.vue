@@ -1,20 +1,22 @@
 <template>
-    <v-mailcard :title="'תפריט'" :maxHeight="500" class="pt-12 mt-12">
-      <v-list class="viewCard">
-        <v-list-item-group v-model="model">
-          <v-list-item
-            v-for="(item, i) in items"
-            :key="i"
-          >
-            <v-list-item-icon>
-              <v-icon v-text="item.icon"></v-icon>
-            </v-list-item-icon>
-            <v-list-item-content @click="route(item.link)" > 
-                <v-list-item-title v-text="item.text"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
+    <v-mailcard :title="'תפריט'" :maxHeight="1500" class="pt-12 mt-12">
+        <v-responsive :aspect-ratio="51/100">
+            <v-list class="viewCard">
+                <v-list-item-group v-model="model">
+                <v-list-item
+                    v-for="(item, i) in items"
+                    :key="i"
+                >
+                    <v-list-item-icon>
+                    <v-icon v-text="item.icon"></v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content @click="route(item.link)" > 
+                        <v-list-item-title v-text="item.text"></v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                </v-list-item-group>
+            </v-list>
+        </v-responsive>
     </v-mailcard>
 </template>
 <script>
