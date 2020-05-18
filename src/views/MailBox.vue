@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-display-mails :items="items" :title="'דואר נכנס'"></v-display-mails>
+    <v-display-mails :items="items" :title="getSelectedTitle"></v-display-mails>
     <v-display-mail :mail="selectedMail"></v-display-mail>
   </v-container>
 </template>
@@ -8,12 +8,19 @@
 <script>
 import DisplayMails from '../components/DisplayMails.vue'
 import DisplayMail from '../components/DisplayMail.vue'
+import { mapGetters } from 'vuex'
 
 export default {
-  name: 'Inbox',
+  name: 'MailBox',
   components: {
     'v-display-mails': DisplayMails,
     'v-display-mail': DisplayMail
+  },
+  props: {
+  },
+  computed: {
+    ...mapGetters(['getSelectedTitle'])
+
   },
   data: () => ({
       selectedMail: {

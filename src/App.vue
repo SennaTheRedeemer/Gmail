@@ -25,7 +25,7 @@ export default {
         {
           icon: 'mdi-inbox',
           text: 'דואר נכנס',
-          link: '/'
+          link: '/in'
         },
         {
           icon: 'mdi-star',
@@ -33,14 +33,14 @@ export default {
           link: 'pp'
         },
         {
-          icon: 'mdi-send',
-          text: 'שלח הודעה',
-          link: 'pp'
+          icon: 'mdi-email-send',
+          text: 'דואר יוצא',
+          link: '/out'
         },
         {
-          icon: 'mdi-email-open',
-          text: 'טיוטות',
-          link: 'pp'
+          icon: 'mdi-delete',
+          text: 'דואר זבל',
+          link: '/trash'
         },
       ]
   }),

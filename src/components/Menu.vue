@@ -10,7 +10,7 @@
                     <v-list-item-icon>
                     <v-icon v-text="item.icon"></v-icon>
                     </v-list-item-icon>
-                    <v-list-item-content @click="route(item.link)" > 
+                    <v-list-item-content @click="route(item.link, item.text)" > 
                         <v-list-item-title v-text="item.text"></v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
@@ -21,6 +21,7 @@
 </template>
 <script>
 import MailCard from "../components/MailCard.vue"
+import { mapActions } from 'vuex'
 
 export default {
     name: 'Menu',
@@ -34,8 +35,10 @@ export default {
         model: 0,
     }),
     methods: {
-        route: function (link) {
-            this.$router.push(link)
+        ...mapActions(['setTitle']),
+        route: function (link, title) {
+            this.setTitle(title);
+            this.$router.push(link);
         },
     }
 }

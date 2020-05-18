@@ -1,14 +1,22 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Inbox from '../views/Inbox.vue';
+import MailBox from '../views/MailBox.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'Inbox',
-    component: Inbox,
+    path: '/in',
+    name: 'MailBox',
+    component: MailBox,
+  },
+  {
+    path: '/out',
+    name: 'Outbox',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: MailBox,
   },
   {
     path: '/trash',
