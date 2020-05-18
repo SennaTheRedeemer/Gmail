@@ -1,7 +1,8 @@
 <template>
   <v-container>
-    <v-display-mails :items="items" :title="getSelectedTitle"></v-display-mails>
-    <v-display-mail :mail="selectedMail"></v-display-mail>
+    <v-display-mails v-if="getSelectedTitle == 'דואר זבל'" :items="items" :title="getSelectedTitle" :maxHeight="5000" :stretch="true"></v-display-mails>
+    <v-display-mails v-else :items="items" :title="getSelectedTitle" :maxHeight="550"></v-display-mails>
+    <v-display-mail v-if="getSelectedTitle != 'דואר זבל'" :mail="selectedMail"></v-display-mail>
   </v-container>
 </template>
 
@@ -59,3 +60,8 @@ export default {
     }),
 };
 </script>
+<style scoped>
+.trashBox {
+  background-color: sandybrown !important;
+}
+</style>
