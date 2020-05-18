@@ -1,6 +1,6 @@
 <template>
-    <v-mailcard :title="'תפריט'" :maxHeight="1500" class="pt-12 mt-12">
-        <v-responsive :aspect-ratio="51/100">
+    <v-mailcard :title="'תפריט'" :maxHeight="1500" class="pt-8 mt-12">
+        <v-responsive :min-height="810">
             <v-list class="viewCard">
                 <v-list-item-group v-model="model">
                 <v-list-item

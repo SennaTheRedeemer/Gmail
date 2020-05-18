@@ -1,7 +1,6 @@
 <template>
   <v-container>
-    <v-display-mails v-if="getSelectedTitle == 'דואר זבל'" :items="items" :title="getSelectedTitle" :maxHeight="5000" :stretch="true"></v-display-mails>
-    <v-display-mails v-else :items="items" :title="getSelectedTitle" :maxHeight="550"></v-display-mails>
+    <v-display-mails :items="items" :title="getSelectedTitle" :maxHeight="maxHeight" :stretch="getSelectedTitle=='דואר זבל'"></v-display-mails>
     <v-display-mail v-if="getSelectedTitle != 'דואר זבל'" :mail="selectedMail"></v-display-mail>
   </v-container>
 </template>
@@ -20,8 +19,15 @@ export default {
   props: {
   },
   computed: {
-    ...mapGetters(['getSelectedTitle'])
-
+    ...mapGetters(['getSelectedTitle']),
+    maxHeight:  function (){
+      if (this.getSelectedTitle == 'דואר זבל') {
+          return 890
+        }
+      else {
+        return 550
+      }
+    }
   },
   data: () => ({
       selectedMail: {
@@ -32,6 +38,30 @@ export default {
         content: "הי אופיר מה קורה אתה בא היום"
       },
       items: [
+        {
+          icon: 'mdi-star',
+          text: 'PLACEHOLDER',
+        },
+        {
+          icon: 'mdi-star',
+          text: 'PLACEHOLDER',
+        },
+        {
+          icon: 'mdi-star',
+          text: 'PLACEHOLDER',
+        },
+        {
+          icon: 'mdi-star',
+          text: 'PLACEHOLDER',
+        },
+        {
+          icon: 'mdi-star',
+          text: 'PLACEHOLDER',
+        },
+        {
+          icon: 'mdi-star',
+          text: 'PLACEHOLDER',
+        },
         {
           icon: 'mdi-star',
           text: 'PLACEHOLDER',
