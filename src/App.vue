@@ -2,10 +2,10 @@
   <v-app class="appView">
     <v-row>
       <v-col class="col-3 pt-3 pr-12">
-        <v-menu :items="items"></v-menu>
+        <v-menu :items="items" @changeView="onChangeView"></v-menu>
       </v-col>
       <v-col class="col-9 pt-12 pl-12">
-        <router-view></router-view>   
+        <v-mailbox :title="title"></v-mailbox>
       </v-col>
     </v-row> 
   </v-app>
@@ -13,13 +13,19 @@
 
 <script>
 import Menu from "./components/Menu.vue"
+import MailBox from "./views/MailBox"
 
 export default {
   name: 'App',
   components: {
     'v-menu': Menu,
+    'v-mailbox': MailBox
   },
-
+  methods: {
+    onChangeView(title) {
+      this.title = title;
+    }
+  },
   data: () => ({
     items: [
         {
@@ -42,7 +48,9 @@ export default {
           text: 'דואר זבל',
           link: '/trash'
         },
-      ]
+        
+      ],
+      title: 'דואר נכנס'
   }),
 };
 </script>

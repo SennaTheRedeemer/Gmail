@@ -1,5 +1,4 @@
 <template>
-    
     <v-mailcard :title="title" :maxHeight="maxHeight" >
         <v-responsive :min-height="minHeight">
             <v-list class="viewCard">
@@ -19,10 +18,10 @@
             </v-list>
       </v-responsive>
     </v-mailcard>
-    
 </template>
 <script>
 import MailCard from "../components/MailCard.vue";
+import Mail from "../components/Mail.vue";
 
 export default {
     name: 'DisplayMails',
@@ -44,6 +43,7 @@ export default {
     },
     components: {
         'v-mailcard': MailCard,
+        'v-mail': Mail
     },
      data: () => ({
         model: null,
