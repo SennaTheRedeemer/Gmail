@@ -37,7 +37,7 @@ export default {
                 return 844;
             }
             else {
-                return 0;
+                return 500;
             }
         }
     },

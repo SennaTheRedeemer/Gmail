@@ -31,22 +31,18 @@ export default {
         {
           icon: 'mdi-inbox',
           text: 'דואר נכנס',
-          link: '/in'
         },
         {
           icon: 'mdi-star',
           text: 'מועדפים',
-          link: 'pp'
         },
         {
           icon: 'mdi-email-send',
           text: 'דואר יוצא',
-          link: '/out'
         },
         {
           icon: 'mdi-delete',
           text: 'דואר זבל',
-          link: '/trash'
         },
         
       ],

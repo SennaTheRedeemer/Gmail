@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/in',
+    path: '/',
     name: 'Inbox',
     component: MailBox,
   },
