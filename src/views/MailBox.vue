@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <v-display-mails :items="items" :title="title" :maxHeight="maxHeight" :stretch="title=='דואר זבל'"></v-display-mails>
-    <v-display-mail v-if="title != 'דואר זבל'" :mail="selectedMail"></v-display-mail>
+    <DisplayMails :items="items" :title="title" :size="size" :stretch="title=='דואר זבל'" class="mails" style="height: 55vh !important"></DisplayMails>
+    <DisplayMail v-if="title != 'דואר זבל'" :mail="selectedMail" class="mail" style="height: 25vh !important"></DisplayMail>
   </v-container>
 </template>
 
@@ -13,20 +13,20 @@ import { mapGetters } from 'vuex'
 export default {
   name: 'MailBox',
   components: {
-    'v-display-mails': DisplayMails,
-    'v-display-mail': DisplayMail
+    DisplayMails,
+    DisplayMail
   },
   props: {
     title: String
   },
   computed: {
     //...mapGetters(['getSelectedTitle']), - for vuex
-    maxHeight:  function (){
+    size:  function (){
       if (this.title == 'דואר זבל') {
-          return 890
+          return "large"
         }
       else {
-        return 550
+        return "small"
       }
     }
   },

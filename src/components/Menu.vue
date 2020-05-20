@@ -1,27 +1,25 @@
 <template>
-    <v-mailcard :title="'תפריט'" :maxHeight="1500" class="pt-8 mt-12">
-        <v-responsive :min-height="810">
+    <BaseCard :title="'תפריט'" class="pt-8 mt-12 viewCard" style="height: 85vh !important">
             <v-list class="viewCard">
-                <v-list-item-group v-model="model">
-                <v-list-item
-                    v-for="(item, i) in items"
-                    :key="i"
-                >
-                    <v-list-item-icon>
-                    <v-icon v-text="item.icon"></v-icon>
-                    </v-list-item-icon>
-                    <!--<v-list-item-content @click="route(item.link, item.text)">  for vuex -->
-                    <v-list-item-content @click="emitTitle(item.text)">
-                        <v-list-item-title v-text="item.text"></v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
+                <v-list-item-group v-model="selected">
+                    <v-list-item
+                        v-for="(item, i) in items"
+                        :key="i"
+                    >
+                        <v-list-item-icon>
+                            <v-icon v-text="item.icon"></v-icon>
+                        </v-list-item-icon>
+                        <!--<v-list-item-content @click="route(item.link, item.text)">  for vuex -->
+                        <v-list-item-content @click="emitTitle(item.text)">
+                            <v-list-item-title v-text="item.text"></v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
                 </v-list-item-group>
             </v-list>
-        </v-responsive>
-    </v-mailcard>
+    </BaseCard>
 </template>
 <script>
-import MailCard from "../components/MailCard.vue"
+import BaseCard from "../components/BaseCard.vue"
 import { mapActions } from 'vuex'
 
 export default {
@@ -30,10 +28,10 @@ export default {
         items: Array
     },
     components: {
-        'v-mailcard': MailCard
+        BaseCard
     },
      data: () => ({
-        model: 0,
+        selected: 0,
     }),
     methods: {
         /*...mapActions(['setTitle']),

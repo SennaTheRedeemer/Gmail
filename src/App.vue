@@ -1,13 +1,15 @@
 <template>
   <v-app class="appView">
-    <v-row>
-      <v-col class="col-3 pt-3 pr-12">
-        <v-menu :items="items" @changeView="onChangeView"></v-menu>
-      </v-col>
-      <v-col class="col-9 pt-12 pl-12">
-        <v-mailbox :title="title"></v-mailbox>
-      </v-col>
-    </v-row> 
+    <v-container>
+      <v-row>
+        <v-col class="col-3 pt-3 pr-12">
+          <Menu :items="items" @changeView="onChangeView"></Menu>
+        </v-col>
+        <v-col class="col-9 pt-12 pl-12">
+          <MailBox :title="title"></MailBox>
+        </v-col>
+      </v-row> 
+    </v-container>
   </v-app>
 </template>
 
@@ -18,8 +20,8 @@ import MailBox from "./views/MailBox"
 export default {
   name: 'App',
   components: {
-    'v-menu': Menu,
-    'v-mailbox': MailBox
+    Menu,
+    MailBox
   },
   methods: {
     onChangeView(title) {
