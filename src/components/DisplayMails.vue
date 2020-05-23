@@ -32,7 +32,6 @@ export default {
     props: {
         items: Array,
         title: String,
-        size: String,
         stretch: Boolean
     },
     computed: {

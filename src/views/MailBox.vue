@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <DisplayMails :items="items" :title="title" :size="size" :stretch="title=='דואר זבל'" class="mails" style="height: 55vh !important"></DisplayMails>
+    <DisplayMails :items="items" :title="title" :stretch="title=='דואר זבל'" class="mails" style="height: 55vh !important"></DisplayMails>
     <DisplayMail v-if="title != 'דואר זבל'" :mail="selectedMail" class="mail" style="height: 25vh !important"></DisplayMail>
   </v-container>
 </template>
@@ -21,14 +21,6 @@ export default {
   },
   computed: {
     //...mapGetters(['getSelectedTitle']), - for vuex
-    size:  function (){
-      if (this.title == 'דואר זבל') {
-          return "large"
-        }
-      else {
-        return "small"
-      }
-    }
   },
   data: () => ({
       selectedMail: {
