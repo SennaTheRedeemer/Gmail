@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <DisplayMails :items="items" :title="title" :stretch="title=='דואר זבל'" class="mails" style="height: 55vh !important"></DisplayMails>
-    <DisplayMail v-if="title != 'דואר זבל'" :mail="selectedMail" class="mail" style="height: 25vh !important"></DisplayMail>
+    <DisplayMails :items="items" title="דואר נכנס" class="mails" style="height: 55vh !important"></DisplayMails>
+    <DisplayMail  :mail="selectedMail" class="mail" style="height: 25vh !important"></DisplayMail>
   </v-container>
 </template>
 

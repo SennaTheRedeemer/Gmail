@@ -6,7 +6,9 @@
           <Menu :items="items" @changeView="onChangeView"></Menu>
         </v-col>
         <v-col class="col-9 pt-12 pl-12">
-          <MailBox :title="title"></MailBox>
+          <keep-alive>
+            <component v-bind:is="currentTabComponent"></component>
+          </keep-alive>
         </v-col>
       </v-row> 
     </v-container>
@@ -15,20 +17,31 @@
 
 <script>
 import Menu from "./components/Menu.vue"
-import MailBox from "./views/MailBox"
+
+import Inbox from "./views/Inbox.vue"
+import Outbox from "./views/Outbox.vue"
+import Trash from "./views/Trash.vue"
 
 export default {
   name: 'App',
   components: {
     Menu,
-    MailBox
+    Inbox,
+    Outbox,
+    Trash
   },
   methods: {
     onChangeView(title) {
-      this.title = title;
+      this.currentTabComponent = this.componentTitles[title]
     }
   },
   data: () => ({
+    currentTabComponent: Inbox,
+    componentTitles: {
+      'דואר נכנס': Inbox,
+      'דואר יוצא': Outbox,
+      'דואר זבל': Trash
+    },
     items: [
         {
           icon: 'mdi-inbox',

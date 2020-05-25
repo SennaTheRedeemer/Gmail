@@ -1,11 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import MailBox from '../views/MailBox.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
-  {
+  /*{
     path: '/',
     name: 'Inbox',
     component: MailBox,
@@ -19,7 +18,7 @@ const routes = [
     path: '/trash',
     name: 'Trasd',
     component: MailBox,
-  },
+  },*/
 ];
 
 const router = new VueRouter({

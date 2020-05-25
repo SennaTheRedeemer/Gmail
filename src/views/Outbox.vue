@@ -1,6 +1,7 @@
 <template>
   <v-container>
-    <DisplayMails :items="items" title="דואר זבל" class="mails" style="height: 85vh !important"></DisplayMails>
+    <DisplayMails :items="items" title="דואר יוצא" class="mails" style="height: 55vh !important"></DisplayMails>
+    <DisplayMail :mail="selectedMail" class="mail" style="height: 25vh !important"></DisplayMail>
   </v-container>
 </template>
 
@@ -22,6 +23,13 @@ export default {
     //...mapGetters(['getSelectedTitle']), - for vuex
   },
   data: () => ({
+      selectedMail: {
+        id: 1,
+        title: 'שלום אופיר',
+        sent: '15 דקות',
+        from: 'יובל דייזי',
+        content: "הי אופיר מה קורה אתה בא היום"
+      },
       items: [
         {
           icon: 'mdi-star',
