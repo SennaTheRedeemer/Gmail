@@ -3,12 +3,10 @@
     <v-container>
       <v-row>
         <v-col class="col-3 pt-3 pr-12">
-          <Menu :items="items" @changeView="onChangeView"></Menu>
+          <Menu :items="items"></Menu>
         </v-col>
         <v-col class="col-9 pt-12 pl-12">
-          <keep-alive>
-            <component v-bind:is="currentTabComponent"></component>
-          </keep-alive>
+          <Content></Content>
         </v-col>
       </v-row> 
     </v-container>
@@ -17,31 +15,20 @@
 
 <script>
 import Menu from "./components/Menu.vue"
+import Content from "./components/content.vue"
+import Vue from 'vue';
+import bus from "./eventbus"
 
-import Inbox from "./views/Inbox.vue"
-import Outbox from "./views/Outbox.vue"
-import Trash from "./views/Trash.vue"
 
 export default {
   name: 'App',
   components: {
     Menu,
-    Inbox,
-    Outbox,
-    Trash
+    Content
   },
   methods: {
-    onChangeView(title) {
-      this.currentTabComponent = this.componentTitles[title]
-    }
   },
   data: () => ({
-    currentTabComponent: Inbox,
-    componentTitles: {
-      'דואר נכנס': Inbox,
-      'דואר יוצא': Outbox,
-      'דואר זבל': Trash
-    },
     items: [
         {
           icon: 'mdi-inbox',
@@ -63,6 +50,8 @@ export default {
       ],
       title: 'דואר נכנס'
   }),
+  mounted() {
+  },
 };
 </script>
 <style >

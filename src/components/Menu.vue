@@ -21,6 +21,8 @@
 <script>
 import BaseCard from "../components/BaseCard.vue"
 import { mapActions } from 'vuex'
+import Vue from "vue"
+import bus from "../eventbus"
 
 export default {
     name: 'Menu',
@@ -40,7 +42,7 @@ export default {
             this.$router.push(link);
         },                                   - for vuex*/ 
         emitTitle(title) {
-            this.$emit('changeView', title)
+            bus.$emit('changeView', title)
         }
     }
 }
