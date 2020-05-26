@@ -29,10 +29,9 @@ export default {
         title: 'דואר נכנס'
     }),
     mounted() {
-        const self = this
-        bus.$on("changeView", function(title) {
-            self.currentTabComponent = self.componentTitles[title]
-            self.title = title
+        bus.$on("changeView", title => {
+            this.currentTabComponent = this.componentTitles[title]
+            this.title = title
         })
     },
 };
