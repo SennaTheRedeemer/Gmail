@@ -1,7 +1,7 @@
 <template>
   <v-container>
-    <DisplayMails :items="items" title="דואר נכנס" class="mails" style="height: 55vh !important"></DisplayMails>
-    <DisplayMail  :mail="selectedMail" class="mail" style="height: 25vh !important"></DisplayMail>
+    <DisplayMails :items="items" title="דואר נכנס" class="mails" :styleStr='"max-height: 45vh !important"'></DisplayMails>
+    <DisplayMail  class="mail" style="height: 25vh !important"></DisplayMail>
   </v-container>
 </template>
 
@@ -23,13 +23,6 @@ export default {
     //...mapGetters(['getSelectedTitle']), - for vuex
   },
   data: () => ({
-      selectedMail: {
-        id: 1,
-        title: 'שלום אופיר',
-        sent: '15 דקות',
-        from: 'יובל דייזי',
-        content: "הי אופיר מה קורה אתה בא היום"
-      },
       items: [
         {
           title: 'Ofir',
@@ -38,16 +31,16 @@ export default {
           date: '2 Days ago'
         },
         {
-          title: 'Ofir',
+          title: 'try',
           from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
+          content: 'qwegfwrgrg',
+          date: '5 Days ago'
         },
         {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
+          title: 'aer',
+          from: '5tg',
+          content: 'sergrttt',
+          date: '6 Days ago'
         },
         {
           title: 'Ofir',

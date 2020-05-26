@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <DisplayMails :items="items" title="דואר זבל" class="mails" style="height: 85vh !important"></DisplayMails>
+    <DisplayMails :items="items" title="דואר זבל" class="mails" :styleStr='"max-height: 78vh !important"'></DisplayMails>
   </v-container>
 </template>
 
