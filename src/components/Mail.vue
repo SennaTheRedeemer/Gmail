@@ -6,7 +6,7 @@
             <v-list-item-subtitle v-text="mail.content"></v-list-item-subtitle>
         </v-list-item-content>
         <v-list-item-icon>
-            <v-list-item-action-text v-text="item.action"></v-list-item-action-text>
+            <v-list-item-action-text v-text="mail.date" class="english"></v-list-item-action-text>
             <v-checkbox :on-icon="'mdi-star'" :off-icon="'mdi-star'" color="#FFD600"></v-checkbox>
         </v-list-item-icon>
     </v-list-item>

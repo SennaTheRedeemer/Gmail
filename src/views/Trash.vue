@@ -24,52 +24,76 @@ export default {
   data: () => ({
       items: [
         {
-          icon: 'mdi-star',
-          text: 'PLACEHOLDER',
+          title: 'Ofir',
+          from: 'Bar',
+          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
+          date: '2 Days ago'
         },
         {
-          icon: 'mdi-star',
-          text: 'PLACEHOLDER',
+          title: 'Ofir',
+          from: 'Bar',
+          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
+          date: '2 Days ago'
         },
         {
-          icon: 'mdi-star',
-          text: 'PLACEHOLDER',
+          title: 'Ofir',
+          from: 'Bar',
+          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
+          date: '2 Days ago'
         },
         {
-          icon: 'mdi-star',
-          text: 'PLACEHOLDER',
+          title: 'Ofir',
+          from: 'Bar',
+          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
+          date: '2 Days ago'
         },
         {
-          icon: 'mdi-star',
-          text: 'PLACEHOLDER',
+          title: 'Ofir',
+          from: 'Bar',
+          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
+          date: '2 Days ago'
         },
         {
-          icon: 'mdi-star',
-          text: 'PLACEHOLDER',
+          title: 'Ofir',
+          from: 'Bar',
+          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
+          date: '2 Days ago'
         },
         {
-          icon: 'mdi-star',
-          text: 'PLACEHOLDER',
+          title: 'Ofir',
+          from: 'Bar',
+          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
+          date: '2 Days ago'
         },
         {
-          icon: 'mdi-star',
-          text: 'PLACEHOLDER',
+          title: 'Ofir',
+          from: 'Bar',
+          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
+          date: '2 Days ago'
         },
         {
-          icon: 'mdi-star',
-          text: 'PLACEHOLDER',
+          title: 'Ofir',
+          from: 'Bar',
+          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
+          date: '2 Days ago'
         },
         {
-          icon: 'mdi-star',
-          text: 'PLACEHOLDER',
+          title: 'Ofir',
+          from: 'Bar',
+          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
+          date: '2 Days ago'
         },
         {
-          icon: 'mdi-star',
-          text: 'PLACEHOLDER',
+          title: 'Ofir',
+          from: 'Bar',
+          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
+          date: '2 Days ago'
         },
         {
-          icon: 'mdi-star',
-          text: 'PLACEHOLDER',
+          title: 'Ofir',
+          from: 'Bar',
+          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
+          date: '2 Days ago'
         },
       ],
     }),

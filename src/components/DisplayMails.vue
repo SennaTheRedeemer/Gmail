@@ -5,17 +5,11 @@
                 <v-col class="col-12">
                     <v-list class="viewCard">
                         <v-list-item-group v-model="selected">
-                        <v-list-item
-                            v-for="(item, i) in items"
-                            :key="i"
-                        >
-                            <v-list-item-icon>
-                                <v-checkbox :on-icon="item.icon" :off-icon="item.icon" color="#FFD600"></v-checkbox>
-                            </v-list-item-icon>
-                            <v-list-item-content>
-                                <v-list-item-title v-text="item.text"></v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
+                        <Mail 
+                        v-for="(a, index) in items"
+                        :key="index"
+                        :mail="a">
+                        </Mail>
                         </v-list-item-group>
                     </v-list>
                 </v-col>
@@ -32,7 +26,6 @@ export default {
     props: {
         items: Array,
         title: String,
-        stretch: Boolean
     },
     computed: {
     },

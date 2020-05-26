@@ -65,8 +65,11 @@ export default {
   }),
 };
 </script>
-<style scoped>
+<style >
 .appView {
   background-color: #E3F2FD !important;
+}
+.english {
+  direction: ltr !important;
 }
 </style>
