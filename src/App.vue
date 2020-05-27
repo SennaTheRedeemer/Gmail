@@ -15,7 +15,7 @@
 
 <script>
 import Menu from "./components/Menu.vue"
-import Content from "./components/content.vue"
+import Content from "./components/Content.vue"
 import Vue from 'vue';
 import bus from "./eventbus"
 
@@ -30,6 +30,10 @@ export default {
   },
   data: () => ({
     items: [
+        {
+          icon: 'mdi-plus',
+          text: 'שלח הודעה'
+        },
         {
           icon: 'mdi-inbox',
           text: 'דואר נכנס',
@@ -46,7 +50,6 @@ export default {
           icon: 'mdi-delete',
           text: 'דואר זבל',
         },
-        
       ],
       title: 'דואר נכנס'
   }),

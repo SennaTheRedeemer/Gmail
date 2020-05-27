@@ -33,7 +33,7 @@ export default {
         BaseCard
     },
      data: () => ({
-        selected: 0,
+        selected: 1,
     }),
     methods: {
         /*...mapActions(['setTitle']),
@@ -43,6 +43,9 @@ export default {
         },                                   - for vuex*/ 
         emitTitle(title) {
             bus.$emit('changeView', title)
+            if(title == 'שלח הודעה'){
+                bus.$emit('writeMessageDialog')
+            }
         }
     }
 }

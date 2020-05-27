@@ -1,0 +1,111 @@
+<template>
+  <v-row justify="center">
+    <v-dialog v-model="dialog" persistent max-width="600px">
+      <v-card>
+        <v-card-title>
+          <span class="headline">שלח הודעה</span>
+        </v-card-title>
+        <v-card-text>
+          <v-container>
+              <v-form v-model="valid" lazy-validation ref="form">
+                <v-row>
+                <v-col cols="6" sm="6" md="6">
+                    <v-text-field label="שלח ל*" v-model="mail.from" 
+                    required 
+                    :counter="20"
+                    :rules="nameRules">
+                    </v-text-field>
+                </v-col>
+                <v-col cols="6" sm="6" md="6">
+                    <v-text-field
+                    label="נושא*"
+                    hint="נושא ההודעה"
+                    required
+                    :counter="40"
+                    :rules="titleRules"
+                    v-model="mail.title"
+                    ></v-text-field>
+                </v-col>
+                </v-row>
+                <v-row>
+                    <v-col cols="12" md="12">
+                        <v-textarea
+                        label="תוכן ההודעה"
+                        value=""
+                        :counter="200"
+                        :rules="contentRules"
+                        hint="מה לשלוח?"
+                        v-model="mail.content"
+                        ></v-textarea>
+                    </v-col>
+                </v-row>
+              </v-form>
+          </v-container>
+          <small>* - שדות חובה.</small>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="blue darken-1" text @click="close">סגור חלון</v-btn>
+          <v-btn color="blue darken-1" :disabled="!valid" text @click="validate">שלח</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+  </v-row>
+</template>
+
+<script>
+import bus from "../eventbus"
+  export default {
+    data () {
+      return {
+        dialog: false,
+        valid: true,
+        nameRules: [
+            name => !!name || 'חובה למלא שם נמען',
+            name => /[a-zA-Zא-ת]+\d*/.test(name) > 0 || "שם הנמען חייב להכיל אותיות",
+            name => (name && name.length <= 20) || 'שדה זה חייב להיות באורך 20 אותיות או פחות',
+        ],
+        titleRules: [
+            title => !!title || "חובה למלא נושא",
+            title => (title && title.length <= 200) || "שדה זה חייב להיות באורך 40 אותיות או פחות"
+        ],
+        contentRules: [
+            title => !!title || "חובה למלא תוכן",
+            title => (title && title.length <= 200) || "שדה זה חייב להיות באורך 200 אותיות או פחות"
+        ],
+        mail: {
+            title: '',
+            from: '',
+            content: '',
+            date: 1590564795000,
+            favorite: false
+        }
+      }
+    },
+    mounted() {
+        bus.$on("writeMessageDialog", () => {
+            this.dialog = true;
+        })
+    },
+    methods: {
+      validate () {
+        if(this.$refs.form.validate()){
+            this.reset()
+            this.dialog = false
+            // Process message
+            console.log(this.mail)
+        }
+      },
+      close() {
+          this.reset()
+          this.dialog = false
+      },
+      reset () {
+        this.$refs.form.reset()
+      },
+      resetValidation () {
+        this.$refs.form.resetValidation()
+      },
+    },
+  }
+</script>
