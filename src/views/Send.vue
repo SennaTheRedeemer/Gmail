@@ -91,7 +91,7 @@ import outbox from "../assets/outbox.json"
             // Process message
             outbox.push({
                 title: this.title,
-                from: this.from,
+                from: "Me",
                 content: this.content,
                 date: new Date().getTime(),
                 favorite: false
