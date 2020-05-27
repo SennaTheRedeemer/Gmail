@@ -10,7 +10,8 @@
               <v-form v-model="valid" lazy-validation ref="form">
                 <v-row>
                 <v-col cols="6" sm="6" md="6">
-                    <v-text-field label="שלח ל*" v-model="mail.from" 
+                    <v-text-field label="שלח ל*" 
+                    v-model="from" 
                     required 
                     :counter="20"
                     :rules="nameRules">
@@ -18,24 +19,24 @@
                 </v-col>
                 <v-col cols="6" sm="6" md="6">
                     <v-text-field
+                    v-model="title"
                     label="נושא*"
                     hint="נושא ההודעה"
                     required
                     :counter="40"
                     :rules="titleRules"
-                    v-model="mail.title"
                     ></v-text-field>
                 </v-col>
                 </v-row>
                 <v-row>
                     <v-col cols="12" md="12">
                         <v-textarea
+                        v-model="content"
                         label="תוכן ההודעה"
                         value=""
                         :counter="200"
                         :rules="contentRules"
                         hint="מה לשלוח?"
-                        v-model="mail.content"
                         ></v-textarea>
                     </v-col>
                 </v-row>
@@ -55,6 +56,7 @@
 
 <script>
 import bus from "../eventbus"
+import outbox from "../assets/outbox.json"
   export default {
     data () {
       return {
@@ -73,13 +75,9 @@ import bus from "../eventbus"
             title => !!title || "חובה למלא תוכן",
             title => (title && title.length <= 200) || "שדה זה חייב להיות באורך 200 אותיות או פחות"
         ],
-        mail: {
-            title: '',
-            from: '',
-            content: '',
-            date: 1590564795000,
-            favorite: false
-        }
+        title: '',
+        from: '',
+        content: '',
       }
     },
     mounted() {
@@ -90,10 +88,16 @@ import bus from "../eventbus"
     methods: {
       validate () {
         if(this.$refs.form.validate()){
+            // Process message
+            outbox.push({
+                title: this.title,
+                from: this.from,
+                content: this.content,
+                date: new Date().getTime(),
+                favorite: false
+            })
             this.reset()
             this.dialog = false
-            // Process message
-            console.log(this.mail)
         }
       },
       close() {

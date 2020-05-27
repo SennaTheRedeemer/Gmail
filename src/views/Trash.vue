@@ -8,6 +8,7 @@
 import DisplayMails from '../components/DisplayMails.vue'
 import DisplayMail from '../components/DisplayMail.vue'
 import { mapGetters } from 'vuex'
+import trash from "../assets/trash.json"
 
 export default {
   name: 'MailBox',
@@ -22,92 +23,7 @@ export default {
     //...mapGetters(['getSelectedTitle']), - for vuex
   },
   data: () => ({
-      items:  [
-        {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564794000,
-          favorite: false
-        },
-        {
-          title: 'try',
-          from: 'Bar',
-          content: 'qwegfwrgrg',
-          date: 1592564894000,
-          favorite: false
-        },
-        {
-          title: 'aer',
-          from: '5tg',
-          content: 'sergrttt',
-          date: 1590564894000,
-          favorite: false
-        },
-        {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564795000,
-          favorite: false
-        },
-        {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564796000,
-          favorite: false
-        },
-        {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564797000,
-          favorite: false
-        },
-        {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564790000,
-          favorite: false
-        },
-        {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564794200,
-          favorite: false
-        },
-        {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564795000,
-          favorite: false
-        },
-        {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564794000,
-          favorite: false
-        },
-        {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590565784000,
-          favorite: false
-        },
-        {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564794000,
-          favorite: false
-        },
-      ],
+      items:  trash
     }),
 };
 </script>
