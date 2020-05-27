@@ -1,7 +1,10 @@
 <template>
-    <keep-alive>
-        <component v-bind:is="currentTabComponent"></component>
-    </keep-alive>
+    <div>
+        <keep-alive>
+            <component v-bind:is="currentTabComponent"></component>
+        </keep-alive>
+        <DisplayMail class="mail" v-if="toDisplay"></DisplayMail>
+    </div>
 </template>
 <script>
 import Inbox from "../views/Inbox.vue"
@@ -9,6 +12,7 @@ import Outbox from "../views/Outbox.vue"
 import Trash from "../views/Trash.vue"
 import Vue from 'vue';
 import bus from "../eventbus"
+import DisplayMail from "./DisplayMail"
 
 export default {
     name: 'Content',
@@ -16,6 +20,16 @@ export default {
         Inbox,
         Outbox,
         Trash,
+        DisplayMail
+    },
+    computed: {
+        toDisplay() {
+            if(this.currentTabComponent == Inbox || 
+                this.currentTabComponent == Outbox){
+                return true
+            }
+            return false
+        }
     },
     methods: {
     },

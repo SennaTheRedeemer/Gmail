@@ -10,7 +10,7 @@
 
             <v-list-item-action @change.stop @click.stop @input.stop @submit.stop @mousedown.stop @select.stop>
                 <v-list-item-action-text v-text="dateString"></v-list-item-action-text>
-                <v-checkbox :on-icon="'mdi-star'" :off-icon="'mdi-star'" :value="selected" color="#FFD600"></v-checkbox>
+                <v-checkbox :on-icon="'mdi-star'" :off-icon="'mdi-star'" v-model="mail.favorite" color="#FFD600"></v-checkbox>
             </v-list-item-action>
 
         </v-list-item>
@@ -73,7 +73,6 @@ export default {
     },
     methods: {
         chooseMail(mail) {
-            console.log(mail)
             bus.$emit("chooseMail", mail)
         }
     }

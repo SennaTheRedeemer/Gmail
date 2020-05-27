@@ -2,7 +2,7 @@
     <BaseCard :title="title" class=" viewCard">
         <v-row class="list">
             <v-col class="col-12 list" :style='styleStr'>
-                <v-list class="viewCard list overflow-y-auto" style="max-height: 100% !important">
+                <v-list class="viewCard list overflow-y-auto fullHeight">
                     <v-list-item-group v-model="selected" class="overflow-y-auto list" >
                     <Mail 
                     v-for="(mail, index) in items"
@@ -44,5 +44,8 @@ export default {
 <style>
 .list {
     height: inherit !important;
+}
+.fullHeight {
+    max-height: 100% !important
 }
 </style>

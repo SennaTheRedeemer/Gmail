@@ -1,5 +1,5 @@
 <template>
-    <BaseCard :title="'תפריט'" class="pt-8 mt-12 viewCard" style="height: 85vh !important">
+    <BaseCard :title="'תפריט'" class="pt-8 mt-12 viewCard menu">
             <v-list class="viewCard">
                 <v-list-item-group v-model="selected">
                     <v-list-item
@@ -51,5 +51,8 @@ export default {
 a {
     text-decoration: none;
     color: black !important;
+}
+.menu {
+    height: 85vh !important
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
   <v-container>
     <DisplayMails :items="items" title="דואר יוצא" class="mails" :styleStr='"max-height: 45vh !important"'></DisplayMails>
-    <DisplayMail class="mail" style="height: 25vh !important"></DisplayMail>
   </v-container>
 </template>
 
@@ -23,78 +22,90 @@ export default {
     //...mapGetters(['getSelectedTitle']), - for vuex
   },
   data: () => ({
-      items: [
+      items:  [
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564794000
+          date: 1590564794000,
+          favorite: false
         },
         {
           title: 'try',
           from: 'Bar',
           content: 'qwegfwrgrg',
-          date: 1592564894000
+          date: 1592564894000,
+          favorite: false
         },
         {
           title: 'aer',
           from: '5tg',
           content: 'sergrttt',
-          date: 1590564894000
+          date: 1590564894000,
+          favorite: false
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564795000
+          date: 1590564795000,
+          favorite: false
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564796000
+          date: 1590564796000,
+          favorite: false
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564797000
+          date: 1590564797000,
+          favorite: false
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564790000
+          date: 1590564790000,
+          favorite: false
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564794200
+          date: 1590564794200,
+          favorite: false
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564795000
+          date: 1590564795000,
+          favorite: false
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564794000
+          date: 1590564794000,
+          favorite: false
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590565784000
+          date: 1590565784000,
+          favorite: false
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: 1590564794000
+          date: 1590564794000,
+          favorite: false
         },
       ],
     }),
