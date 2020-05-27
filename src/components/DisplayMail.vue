@@ -1,12 +1,11 @@
 <template>
     <BaseCard class="ml-4 mt-12 viewCard" :title="'מידע נוסף'" v-if="mail" >
-            <v-row class="pt-3 flex-row display">
-                <v-container>
-                    <v-card-title> כותרת: {{mail.title}}</v-card-title>
-                    <v-card-subtitle> שולח: {{mail.from}}</v-card-subtitle>
-                    <v-card-text> תוכן: {{mail.content}}</v-card-text>
-                </v-container>
-            </v-row>
+        <div>
+            <v-card-title class="mt-0 pb-0"> כותרת: {{mail.title}}</v-card-title>
+            <v-divider></v-divider>
+            <v-card-subtitle> שולח: {{mail.from}}</v-card-subtitle>
+            <v-card-text> תוכן: {{mail.content}}</v-card-text>
+        </div>
     </BaseCard>
 </template>
 <script>

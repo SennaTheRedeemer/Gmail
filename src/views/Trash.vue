@@ -27,73 +27,73 @@ export default {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
+          date: 1590564794000
+        },
+        {
+          title: 'try',
+          from: 'Bar',
+          content: 'qwegfwrgrg',
+          date: 1592564894000
+        },
+        {
+          title: 'aer',
+          from: '5tg',
+          content: 'sergrttt',
+          date: 1590564894000
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
+          date: 1590564795000
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
+          date: 1590564796000
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
+          date: 1590564797000
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
+          date: 1590564790000
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
+          date: 1590564794200
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
+          date: 1590564795000
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
+          date: 1590564794000
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
+          date: 1590565784000
         },
         {
           title: 'Ofir',
           from: 'Bar',
           content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
-        },
-        {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
-        },
-        {
-          title: 'Ofir',
-          from: 'Bar',
-          content: 'contentcontentcontentcontentcontentcontentcontentcontent',
-          date: '2 Days ago'
+          date: 1590564794000
         },
       ],
     }),
