@@ -16,8 +16,9 @@
                 overlap
                 v-if="isNewMail"
                 >
-                    <v-list-item-action-text v-text="dateString"></v-list-item-action-text>
+                    
                 </v-badge>
+                <v-list-item-action-text v-text="dateString"></v-list-item-action-text>
                 <v-checkbox :on-icon="'mdi-star'" :off-icon="'mdi-star'" v-model="mail.favorite" color="#FFD600"></v-checkbox>
             </v-list-item-action>
         </v-list-item>
