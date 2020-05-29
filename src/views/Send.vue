@@ -51,6 +51,22 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+
+    <v-snackbar
+      color="amber lighten-3"
+      v-model="propAlert"
+      :timeout="alertTimeout"
+    >
+      <strong class="blackWrite">{{ propText }} </strong>
+      <v-btn
+        color="black"
+        text
+        @click="propAlert = false"
+      >
+        <v-icon>mdi-close</v-icon>
+      </v-btn>
+    </v-snackbar>
+
   </v-row>
 </template>
 
@@ -60,6 +76,9 @@ import outbox from "../assets/outbox.json"
   export default {
     data () {
       return {
+        propAlert: false,
+        propText: 'המייל נשלח בהצלחה!',
+        alertTimeout: 4000,
         dialog: false,
         valid: true,
         nameRules: [
@@ -96,20 +115,26 @@ import outbox from "../assets/outbox.json"
                 date: new Date().getTime(),
                 favorite: false
             })
-            this.reset()
-            this.dialog = false
+            this.reset();
+            this.dialog = false;
+            this.propAlert = true;
         }
       },
       close() {
-          this.reset()
-          this.dialog = false
+          this.reset();
+          this.dialog = false;
       },
       reset () {
-        this.$refs.form.reset()
+        this.$refs.form.reset();
       },
       resetValidation () {
-        this.$refs.form.resetValidation()
+        this.$refs.form.resetValidation();
       },
     },
   }
 </script>
+<style scoped>
+.blackWrite {
+  color: black !important;
+}
+</style>
