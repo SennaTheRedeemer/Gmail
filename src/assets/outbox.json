@@ -4,83 +4,95 @@
     "from": "Bar",
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564794000,
-    "favorite": true
+    "favorite": true,
+    "new": false
   },
   {
     "title": "try",
     "from": "Bar",
     "content": "qwegfwrgrg",
     "date": 1592564894000,
-    "favorite": false
+    "favorite": false,
+    "new": false
   },
   {
     "title": "aer",
     "from": "5tg",
     "content": "sergrttt",
     "date": 1590564894000,
-    "favorite": true
+    "favorite": true,
+    "new": false
   },
   {
     "title": "Ofir",
     "from": "Bar",
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564795000,
-    "favorite": false
+    "favorite": false,
+    "new": false
   },
   {
     "title": "Ofir",
     "from": "Bar",
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564796000,
-    "favorite": false
+    "favorite": false,
+    "new": false
   },
   {
     "title": "Ofir",
     "from": "Bar",
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564797000,
-    "favorite": false
+    "favorite": false,
+    "new": false
   },
   {
     "title": "Ofir",
     "from": "Bar",
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564790000,
-    "favorite": false
+    "favorite": false,
+    "new": false
   },
   {
     "title": "Ofir",
     "from": "Bar",
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564794200,
-    "favorite": false
+    "favorite": false,
+    "new": false
   },
   {
     "title": "Ofir",
     "from": "Bar",
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564795000,
-    "favorite": false
+    "favorite": false,
+    "new": false
   },
   {
     "title": "Ofir",
     "from": "Bar",
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564794000,
-    "favorite": false
+    "favorite": false,
+    "new": false
   },
   {
     "title": "Ofir",
     "from": "Bar",
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590565784000,
-    "favorite": false
+    "favorite": false,
+    "new": false
   },
   {
     "title": "Ofir",
     "from": "Bar",
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564794000,
-    "favorite": false
+    "favorite": false,
+    "new": false
   }
 ]

@@ -108,12 +108,13 @@ import outbox from "../assets/outbox.json"
       validate () {
         if(this.$refs.form.validate()){
             // Process message
-            outbox.push({
+            outbox.unshift({
                 title: this.title,
                 from: "Me",
                 content: this.content,
                 date: new Date().getTime(),
-                favorite: false
+                favorite: false,
+                new: true,
             })
             this.reset();
             this.dialog = false;

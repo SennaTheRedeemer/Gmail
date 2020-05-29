@@ -9,10 +9,17 @@
             </v-list-item-content>
 
             <v-list-item-action @change.stop @click.stop @input.stop @submit.stop @mousedown.stop @select.stop>
+                <v-badge
+                :value="isNewMail"
+                color="blue"
+                icon="mdi-exclamation"
+                overlap
+                v-if="isNewMail"
+            >
                 <v-list-item-action-text v-text="dateString"></v-list-item-action-text>
+                </v-badge>
                 <v-checkbox :on-icon="'mdi-star'" :off-icon="'mdi-star'" v-model="mail.favorite" color="#FFD600"></v-checkbox>
             </v-list-item-action>
-
         </v-list-item>
         <v-divider></v-divider>
     </div>
@@ -30,6 +37,9 @@ export default {
         selected: false,
     }),
     computed: {
+        isNewMail() {
+            return this.mail.new
+        },
         dateString() {
             let dateStr = "לפני ";
 
@@ -73,6 +83,7 @@ export default {
     },
     methods: {
         chooseMail(mail) {
+            mail.new = false
             bus.$emit("chooseMail", mail)
         }
     }
