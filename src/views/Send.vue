@@ -32,7 +32,7 @@
                     <v-col cols="12" md="12">
                         <v-textarea
                         v-model="content"
-                        label="תוכן ההודעה"
+                        label="תוכן ההודעה*"
                         value=""
                         :counter="200"
                         :rules="contentRules"
