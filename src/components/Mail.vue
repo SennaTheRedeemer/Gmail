@@ -15,8 +15,8 @@
                 icon="mdi-exclamation"
                 overlap
                 v-if="isNewMail"
-            >
-                <v-list-item-action-text v-text="dateString"></v-list-item-action-text>
+                >
+                    <v-list-item-action-text v-text="dateString"></v-list-item-action-text>
                 </v-badge>
                 <v-checkbox :on-icon="'mdi-star'" :off-icon="'mdi-star'" v-model="mail.favorite" color="#FFD600"></v-checkbox>
             </v-list-item-action>
