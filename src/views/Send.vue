@@ -47,7 +47,8 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" text @click="close">סגור חלון</v-btn>
-          <v-btn color="blue darken-1" :disabled="!valid" text @click="validate">שלח</v-btn>
+          <v-btn color="blue darken-1" :disabled="!valid" text @click="send">שלח</v-btn>
+          <v-btn color="blue darken-1" :disabled="!valid" text @click="sendMyself">שלח לעצמי</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -106,8 +107,8 @@ import { mapGetters, mapActions } from 'vuex'
         })
     },
     methods: {
-        ...mapActions(['outboxAddMail']),
-      validate () {
+        ...mapActions(['outboxAddMail', 'inboxAddMail']),
+      send () {
         if(this.$refs.form.validate()){
             this.outboxAddMail({
                 title: this.title,
@@ -122,6 +123,22 @@ import { mapGetters, mapActions } from 'vuex'
             this.dialog = false;
             this.propAlert = true;
         }
+      },
+      sendMyself() {
+          if(this.$refs.form.validate()){
+              this.inboxAddMail({
+                title: this.title,
+                from: "Me",
+                content: this.content,
+                date: new Date().getTime(),
+                favorite: false,
+                new: true,
+                position: "inbox"
+            })
+            this.reset();
+            this.dialog = false;
+            this.propAlert = true;
+          }
       },
       close() {
           this.reset();
