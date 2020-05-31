@@ -1,6 +1,5 @@
 <template>
     <div>
-        <v-divider></v-divider>
         <v-list-item :class="{ 'amber lighten-4': isReply }">
             <v-list-item-content  @click="chooseMail(mail)">
                 <v-list-item-title v-text="mail.title"></v-list-item-title>
@@ -8,7 +7,7 @@
                 <v-list-item-subtitle v-text="shortenedText"></v-list-item-subtitle>   
             </v-list-item-content>
 
-            <v-list-item-action @change.stop @click.stop @input.stop @submit.stop @mousedown.stop @select.stop>
+            <v-list-item-action @click.stop >
                 <v-badge
                 :value="isNewMail"
                 color="blue"
@@ -20,14 +19,14 @@
                 <v-list-item-action-text v-text="dateString"></v-list-item-action-text>
                 <v-checkbox :on-icon="'mdi-star'" :off-icon="'mdi-star'" v-model="mail.favorite" color="#FFD600"></v-checkbox>
                 <v-row>
-                <v-btn v-if="!trash" icon color="red" @click="deleteMail(mail)">
-                    <v-icon>mdi-delete</v-icon>
-                </v-btn>
-                <v-btn v-if="inbox" icon color="black" @click="replyMail(mail)">
-                    <v-icon>mdi-reply</v-icon>
-                </v-btn>
+                    <v-btn v-if="!trash" icon color="red" @click="deleteMail(mail)">
+                        <v-icon>mdi-delete</v-icon>
+                    </v-btn>
+                    <v-btn v-if="inbox" icon color="black" @click="replyMail(mail)">
+                        <v-icon>mdi-reply</v-icon>
+                    </v-btn>
                 </v-row>
-                <v-btn v-if="trash" icon color="black" @click="returnMail(mail)">
+                <v-btn v-if="trash" icon color="black" @click="restoreMail(mail)">
                     <v-icon>mdi-undo</v-icon>
                 </v-btn>
             </v-list-item-action>
@@ -41,7 +40,7 @@ import bus from "../eventbus"
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
-    name: 'MailCard',
+    name: 'MailItem',
     props: {
         mail: Object,
         trash: Boolean,
@@ -111,7 +110,7 @@ export default {
             mail.reply = false;
             bus.$emit("deleteMail", mail);
         },
-        returnMail(mail) {
+        restoreMail(mail) {
             mail.new = true;
             switch(mail.position) {
                 case 'inbox': {

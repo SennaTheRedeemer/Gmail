@@ -1,18 +1,17 @@
 <template>
-    <BaseCard :title="title" class=" viewCard">
+    <BaseCard :title="title" class=" viewCard" :showFavoriteSwitch="true">
         <v-row class="list">
             <v-col class="col-12 list" :style='styleStr'>
                 <v-list class="viewCard list overflow-y-auto fullHeight">
-                    <v-list-item><slot></slot></v-list-item>
                     <v-list-item-group v-model="selected" class="overflow-y-auto list" >
-                    <Mail 
+                    <MailItem 
                     v-for="(mail, index) in items"
                     :key="index"
                     :mail="mail"
                     :trash="trash"
                     :inbox="inbox"
-                   >
-                    </Mail>
+                >
+                    </MailItem>
                     </v-list-item-group>
                 </v-list>
             </v-col>
@@ -21,7 +20,7 @@
 </template>
 <script>
 import BaseCard from "../components/BaseCard.vue";
-import Mail from "../components/Mail.vue";
+import MailItem from "../components/MailItem.vue";
 
 
 export default {
@@ -39,7 +38,7 @@ export default {
     },
     components: {
         BaseCard,
-        Mail
+        MailItem
     },
      data: () => ({
         selected: null,

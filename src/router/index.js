@@ -9,7 +9,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
+    path: '/inbox',
     name: 'Inbox',
     component: Inbox,
   },
@@ -28,6 +28,10 @@ const routes = [
     name: 'Send',
     component: Send,
   },
+  {
+    path: '*',
+    redirect: '/inbox'
+  }
 ];
 
 const router = new VueRouter({

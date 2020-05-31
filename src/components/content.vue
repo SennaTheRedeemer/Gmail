@@ -25,10 +25,7 @@ export default {
     },
     computed: {
         toDisplay() {
-            if(this.$route.name != "Trash"){
-                return true
-            }
-            return false
+            return (this.$route.name !== "Trash")
         }
     },
     methods: {

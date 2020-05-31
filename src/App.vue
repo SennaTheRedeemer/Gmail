@@ -38,7 +38,7 @@ export default {
         {
           icon: 'mdi-inbox',
           text: 'דואר נכנס',
-          link: '/'
+          link: '/inbox'
         },
         {
           icon: 'mdi-email-send',

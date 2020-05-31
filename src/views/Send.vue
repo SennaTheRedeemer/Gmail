@@ -101,6 +101,9 @@ import { mapGetters, mapActions } from 'vuex'
         content: '',
       }
     },
+    computed: {
+      ...mapGetters(['getNewID']),
+    },
     mounted() {
         bus.$on("openSendDialog", () => {
             this.dialog = true;
@@ -117,7 +120,8 @@ import { mapGetters, mapActions } from 'vuex'
                 date: new Date().getTime(),
                 favorite: false,
                 new: true,
-                position: "outbox"
+                position: "outbox",
+                id: this.getNewID
             })
             this.reset();
             this.dialog = false;

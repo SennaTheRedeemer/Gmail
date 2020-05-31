@@ -1,7 +1,6 @@
 <template>
   <v-container>
-    <DisplayMails :items="displayMails" title="דואר יוצא" :trash="false" class="mails" :styleStr='"max-height: 40vh !important"'>
-      <v-switch class="pt-0 mt-0" v-model="favoriteOnly" :label="`הראה מועדפים בלבד`"></v-switch>
+    <DisplayMails :items="displayMails" title="דואר יוצא" :trash="false" class="mails" :styleStr='"max-height: 40vh !important; min-height: 40vh !important"'>
     </DisplayMails>
   </v-container>
 </template>
@@ -25,9 +24,9 @@ export default {
     ...mapActions(['outboxRemoveMail', 'trashAddMail'])
   },
   computed: {
-    ...mapGetters(['getOutbox']),
+    ...mapGetters(['getOutbox', 'getFavoriteOnly']),
     displayMails() {
-      if (this.favoriteOnly) {
+      if (this.getFavoriteOnly) {
         return this.getOutbox.filter(mail => {return mail.favorite})
       }
       else {
@@ -36,7 +35,6 @@ export default {
     }
   },
   data: () => ({
-    favoriteOnly: false,
     }),
   mounted() {
     bus.$on("deleteMail", (mail) => {

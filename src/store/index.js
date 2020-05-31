@@ -1,381 +1,26 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-
+import inbox from '../assets/inbox.json'
+import outbox from '../assets/outbox.json'
+import trash from '../assets/trash.json'
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    inbox: [
-      {
-        "title": "Osfir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564794000,
-        "favorite": true,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "try",
-        "from": "Bar",
-        "content": "qwegfwrgrg",
-        "date": 1592564894000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "aer",
-        "from": "5tg",
-        "content": "sergrttt",
-        "date": 1590564894000,
-        "favorite": true,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564795000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564796000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564797000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564790000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564794200,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564795000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564794000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590565784000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564794000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      }
-    ],
-    outbox: [
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564794000,
-        "favorite": true,
-        "new": false,
-        "position": "outbox",
-        "reply": false
-      },
-      {
-        "title": "try",
-        "from": "Bar",
-        "content": "qwegfwrgrg",
-        "date": 1592564894000,
-        "favorite": false,
-        "new": false,
-        "position": "outbox",
-        "reply": false
-      },
-      {
-        "title": "aer",
-        "from": "5tg",
-        "content": "sergrttt",
-        "date": 1590564894000,
-        "favorite": true,
-        "new": false,
-        "position": "outbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564795000,
-        "favorite": false,
-        "new": false,
-        "position": "outbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564796000,
-        "favorite": false,
-        "new": false,
-        "position": "outbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564797000,
-        "favorite": false,
-        "new": false,
-        "position": "outbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564790000,
-        "favorite": false,
-        "new": false,
-        "position": "outbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564794200,
-        "favorite": false,
-        "new": false,
-        "position": "outbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564795000,
-        "favorite": false,
-        "new": false,
-        "position": "outbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564794000,
-        "favorite": false,
-        "new": false,
-        "position": "outbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590565784000,
-        "favorite": false,
-        "new": false,
-        "position": "outbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564794000,
-        "favorite": false,
-        "new": false,
-        "position": "outbox",
-        "reply": false
-      }
-    ],
-    trash: [
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564794000,
-        "favorite": true,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "try",
-        "from": "Bar",
-        "content": "qwegfwrgrg",
-        "date": 1592564894000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "aer",
-        "from": "5tg",
-        "content": "sergrttt",
-        "date": 1590564894000,
-        "favorite": true,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564795000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564796000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564797000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564790000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564794200,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564795000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564794000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox"
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590565784000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      },
-      {
-        "title": "Ofir",
-        "from": "Bar",
-        "content": "contentcontentcontentcontentcontentcontentcontentcontent",
-        "date": 1590564794000,
-        "favorite": false,
-        "new": false,
-        "position": "inbox",
-        "reply": false
-      }
-    ],
+    inbox,
+    outbox,
+    trash,
+    currentIndex: 24,
     selectedTitle: 'דואר נכנס',
     displayMails: [],
+    favoriteOnly: false,
   },
   getters: {
     getDisplayMails: (state) => {
       return state.displayMails;
+    },
+    getFavoriteOnly: (state) => {
+      return state.favoriteOnly;
     },
     getSelectedTitle: (state) => {
       return state.selectedTitle;
@@ -388,11 +33,18 @@ export default new Vuex.Store({
     },
     getTrash: (state) => {
       return state.trash;
+    },
+    getNewID(state) {
+      state.currentIndex++;
+      return (state.currentIndex - 1);
     }
   },
   mutations: {
     setTitle(state, title) {
       state.selectedTitle = title;
+    },
+    changeFavoriteOnly(state) {
+      state.favoriteOnly = !state.favoriteOnly
     },
     setDisplayMails(state, displayMails) {
       state.displayMails = displayMails
@@ -408,44 +60,47 @@ export default new Vuex.Store({
     },
     removeMailInbox(state, mail) {
       state.inbox = state.inbox.filter(currMail => {
-        return currMail != mail;
+        return currMail.id != mail.id;
       })
     },
     removeMailOutbox(state, mail) {
       state.outbox = state.outbox.filter(currMail => {
-        return currMail != mail;
+        return currMail.id != mail.id;
       })
     },
     removeMailTrash(state, mail) {
       state.trash = state.trash.filter(currMail => {
-        return currMail != mail;
+        return currMail.id != mail.id;
       })
     },
   },
   actions: {
-    setTitle (context, title) {
-      context.commit('setTitle', title)
+    setTitle ({commit}, title) {
+      commit('setTitle', title)
     },
-    setDisplayMails (context, displayMails) {
-      context.commit('setDisplayMails', displayMails)
+    setFavoriteOnly({commit}) {
+      commit('changeFavoriteOnly');
     },
-    inboxAddMail(context, mail) {
-      context.commit('addMailInbox', mail);
+    setDisplayMails ({commit}, displayMails) {
+      commit('setDisplayMails', displayMails)
     },
-    outboxAddMail(context, mail) {
-      context.commit('addMailOutbox', mail);
+    inboxAddMail({commit}, mail) {
+      commit('addMailInbox', mail);
     },
-    trashAddMail(context, mail) {
-      context.commit('addMailTrash', mail);
+    outboxAddMail({commit}, mail) {
+      commit('addMailOutbox', mail);
     },
-    inboxRemoveMail(context, mail) {
-      context.commit('removeMailInbox', mail);
+    trashAddMail({commit}, mail) {
+      commit('addMailTrash', mail);
     },
-    outboxRemoveMail(context, mail) {
-      context.commit('removeMailOutbox', mail);
+    inboxRemoveMail({commit}, mail) {
+      commit('removeMailInbox', mail);
     },
-    trashRemoveMail(context, mail) {
-      context.commit('removeMailTrash', mail);
+    outboxRemoveMail({commit}, mail) {
+      commit('removeMailOutbox', mail);
+    },
+    trashRemoveMail({commit}, mail) {
+      commit('removeMailTrash', mail);
     },
   },
   modules: {
