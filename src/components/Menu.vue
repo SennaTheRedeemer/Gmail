@@ -9,8 +9,7 @@
                         <v-list-item-icon>
                             <v-icon v-text="item.icon"></v-icon>
                         </v-list-item-icon>
-                        <!--<v-list-item-content @click="route(item.link, item.text)">  for vuex -->
-                        <v-list-item-content @click="emitTitle(item.text)">
+                        <v-list-item-content @click="route(item.link)">
                             <v-list-item-title v-text="item.text"></v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
@@ -36,15 +35,12 @@ export default {
         selected: 1,
     }),
     methods: {
-        /*...mapActions(['setTitle']),
-        route: function (link, title) {
-            this.setTitle(title);
-            this.$router.push(link);
-        },                                   - for vuex*/ 
-        emitTitle(title) {
-            bus.$emit('changeView', title)
-            if(title == 'שלח הודעה'){
-                bus.$emit('writeMessageDialog')
+        route(link) {
+            if(link == 'sendMessage'){
+                bus.$emit('openSendDialog')
+            }
+            else {
+                this.$router.push(link);
             }
         }
     }

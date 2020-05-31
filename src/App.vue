@@ -32,23 +32,23 @@ export default {
     items: [
         {
           icon: 'mdi-plus',
-          text: 'שלח הודעה'
+          text: 'שלח הודעה',
+          link: 'sendMessage'
         },
         {
           icon: 'mdi-inbox',
           text: 'דואר נכנס',
-        },
-        {
-          icon: 'mdi-star',
-          text: 'מועדפים',
+          link: '/'
         },
         {
           icon: 'mdi-email-send',
           text: 'דואר יוצא',
+          link: 'outbox'
         },
         {
           icon: 'mdi-delete',
           text: 'דואר זבל',
+          link: 'trash'
         },
       ],
       title: 'דואר נכנס'

@@ -20,6 +20,11 @@ export default {
         bus.$on("chooseMail", mail => {
             this.mail = mail
         })
+        bus.$on("deleteMail", mail => {
+            if(this.mail == mail) {
+                this.mail = undefined
+            }
+        })
     },
      data: () => ({
         // mail: {

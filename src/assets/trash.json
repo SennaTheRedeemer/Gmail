@@ -5,7 +5,8 @@
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564794000,
     "favorite": true,
-    "new": false
+    "new": false,
+    "position": "trash"
   },
   {
     "title": "try",
@@ -13,7 +14,8 @@
     "content": "qwegfwrgrg",
     "date": 1592564894000,
     "favorite": false,
-    "new": false
+    "new": false,
+    "position": "trash"
   },
   {
     "title": "aer",
@@ -21,7 +23,8 @@
     "content": "sergrttt",
     "date": 1590564894000,
     "favorite": true,
-    "new": false
+    "new": false,
+    "position": "trash"
   },
   {
     "title": "Ofir",
@@ -29,7 +32,8 @@
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564795000,
     "favorite": false,
-    "new": false
+    "new": false,
+    "position": "trash"
   },
   {
     "title": "Ofir",
@@ -37,7 +41,8 @@
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564796000,
     "favorite": false,
-    "new": false
+    "new": false,
+    "position": "trash"
   },
   {
     "title": "Ofir",
@@ -45,7 +50,8 @@
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564797000,
     "favorite": false,
-    "new": false
+    "new": false,
+    "position": "trash"
   },
   {
     "title": "Ofir",
@@ -53,7 +59,8 @@
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564790000,
     "favorite": false,
-    "new": false
+    "new": false,
+    "position": "trash"
   },
   {
     "title": "Ofir",
@@ -61,7 +68,8 @@
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564794200,
     "favorite": false,
-    "new": false
+    "new": false,
+    "position": "trash"
   },
   {
     "title": "Ofir",
@@ -69,7 +77,8 @@
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564795000,
     "favorite": false,
-    "new": false
+    "new": false,
+    "position": "trash"
   },
   {
     "title": "Ofir",
@@ -77,7 +86,8 @@
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564794000,
     "favorite": false,
-    "new": false
+    "new": false,
+    "position": "trash"
   },
   {
     "title": "Ofir",
@@ -85,7 +95,8 @@
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590565784000,
     "favorite": false,
-    "new": false
+    "new": false,
+    "position": "trash"
   },
   {
     "title": "Ofir",
@@ -93,6 +104,7 @@
     "content": "contentcontentcontentcontentcontentcontentcontentcontent",
     "date": 1590564794000,
     "favorite": false,
-    "new": false
+    "new": false,
+    "position": "trash"
   }
 ]

@@ -72,7 +72,8 @@
 
 <script>
 import bus from "../eventbus"
-import outbox from "../assets/outbox.json"
+import { mapGetters, mapActions } from 'vuex'
+
   export default {
     data () {
       return {
@@ -100,25 +101,29 @@ import outbox from "../assets/outbox.json"
       }
     },
     mounted() {
-        bus.$on("writeMessageDialog", () => {
+        bus.$on("openSendDialog", () => {
             this.dialog = true;
         })
     },
     methods: {
+        ...mapActions(['outboxAddMail']),
       validate () {
         if(this.$refs.form.validate()){
             // Process message
-            outbox.unshift({
+            
+            this.outboxAddMail({
                 title: this.title,
                 from: "Me",
                 content: this.content,
                 date: new Date().getTime(),
                 favorite: false,
                 new: true,
+                position: "outbox"
             })
             this.reset();
             this.dialog = false;
             this.propAlert = true;
+            console.log(outbox)
         }
       },
       close() {

@@ -1,14 +1,14 @@
 <template>
   <v-container>
-    <DisplayMails :items="items" title="דואר זבל" class="mails" :styleStr='"max-height: 76vh !important"'></DisplayMails>
+    <DisplayMails :items="getTrash" title="דואר זבל" :trash="true" class="mails" :styleStr='"max-height: 74vh !important"'></DisplayMails>
   </v-container>
 </template>
 
 <script>
 import DisplayMails from '../components/DisplayMails.vue'
 import DisplayMail from '../components/DisplayMail.vue'
-import { mapGetters } from 'vuex'
-import trash from "../assets/trash.json"
+import { mapGetters, mapActions } from 'vuex'
+import bus from "../eventbus"
 
 export default {
   name: 'MailBox',
@@ -16,11 +16,20 @@ export default {
     DisplayMails,
     DisplayMail
   },
+  
   props: {
     title: String
   },
+  methods: {
+    ...mapActions(['trashRemoveMail'])
+  },
+  mounted() {
+    bus.$on("deleteMail", (mail) => {
+      this.trashRemoveMail(mail);
+    })
+  },
   computed: {
-    //...mapGetters(['getSelectedTitle']), - for vuex
+    ...mapGetters(['getTrash']),
   },
   data: () => ({
       items:  trash

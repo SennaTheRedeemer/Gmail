@@ -1,8 +1,6 @@
 <template>
     <div>
-        <keep-alive>
-            <component v-bind:is="currentTabComponent"></component>
-        </keep-alive>
+        <router-view></router-view>
         <DisplayMail class="mail" v-if="toDisplay"></DisplayMail>
         <Send></Send>
     </div>
@@ -16,6 +14,13 @@ import Vue from 'vue';
 import bus from "../eventbus"
 import DisplayMail from "./DisplayMail"
 
+const componentsIDs = {
+    INBOX: 0,
+    OUTBOX: 1,
+    TRASH: 2,
+    SEND: 3
+}
+
 export default {
     name: 'Content',
     components: {
@@ -27,8 +32,8 @@ export default {
     },
     computed: {
         toDisplay() {
-            if(this.currentTabComponent == Inbox || 
-                this.currentTabComponent == Outbox){
+            if(this.currentTabComponent.component == Inbox || 
+                this.currentTabComponent.component == Outbox){
                 return true
             }
             return false
@@ -37,20 +42,42 @@ export default {
     methods: {
     },
     data: () => ({
-        currentTabComponent: Inbox,
-        componentTitles: {
-            'דואר נכנס': Inbox,
-            'דואר יוצא': Outbox,
-            'דואר זבל': Trash,
-            'שלח הודעה': Send
+        currentTabComponent: {
+            title: 'דואר נכנס',
+            component: Inbox,
+            id: componentsIDs.INBOX
         },
-        title: 'דואר נכנס'
+        views: [
+            {
+                title: 'דואר נכנס',
+                component: Inbox,
+                id: componentsIDs.INBOX
+            },
+            {
+                title: 'דואר יוצא',
+                component: Outbox,
+                id: componentsIDs.OUTBOX
+            },
+            {
+                title: 'דואר זבל',
+                component: Trash,
+                id: componentsIDs.TRASH
+            },
+            {
+                title: 'שלח הודעה',
+                component: Send,
+                id: componentsIDs.SEND
+            },
+        ],
     }),
     mounted() {
         bus.$on("changeView", title => {
-            if(title != 'שלח הודעה') {
-                this.currentTabComponent = this.componentTitles[title]
-                this.title = title
+            if(this.currentTabComponent && 
+                this.views.find(view => view.title == title).id != componentsIDs.SEND) {
+                this.currentTabComponent = this.views.find(view => view.title == title)
+            }
+            if(this.currentTabComponent == undefined){
+                this.currentTabComponent = this.views.find(view => view.title == title)
             }
         })
     },

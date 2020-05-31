@@ -8,6 +8,7 @@
                     v-for="(mail, index) in items"
                     :key="index"
                     :mail="mail"
+                    :trash="trash"
                    >
                     </Mail>
                     </v-list-item-group>
@@ -26,7 +27,8 @@ export default {
     props: {
         items: Array,
         title: String,
-        styleStr: String
+        styleStr: String,
+        trash: Boolean
     },
     methods: {
     },

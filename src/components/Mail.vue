@@ -20,6 +20,9 @@
                 </v-badge>
                 <v-list-item-action-text v-text="dateString"></v-list-item-action-text>
                 <v-checkbox :on-icon="'mdi-star'" :off-icon="'mdi-star'" v-model="mail.favorite" color="#FFD600"></v-checkbox>
+                <v-btn v-if="!trash" icon color="red" @click="deleteMail(mail)">
+                    <v-icon>mdi-delete</v-icon>
+                </v-btn>
             </v-list-item-action>
         </v-list-item>
         <v-divider></v-divider>
@@ -33,6 +36,7 @@ export default {
     name: 'MailCard',
     props: {
         mail: Object,
+        trash: Boolean
     },
     data: () => ({
         selected: false,
@@ -75,17 +79,20 @@ export default {
     },
     shortenedText() {
         if(this.mail.content.length > 40) {
-            return this.mail.content.slice(0, 40) + "..."
+            return this.mail.content.slice(0, 40) + "...";
         }
         else {
-            return this.mail.content
+            return this.mail.content;
         }
     }
     },
     methods: {
         chooseMail(mail) {
-            mail.new = false
-            bus.$emit("chooseMail", mail)
+            mail.new = false;
+            bus.$emit("chooseMail", mail);
+        },
+        deleteMail(mail) {
+            bus.$emit("deleteMail", mail);
         }
     }
 }
