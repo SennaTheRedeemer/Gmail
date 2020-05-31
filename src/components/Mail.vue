@@ -1,11 +1,11 @@
 <template>
     <div>
-        <v-list-item>
+        <v-divider></v-divider>
+        <v-list-item :class="{ 'amber lighten-4': isReply }">
             <v-list-item-content  @click="chooseMail(mail)">
                 <v-list-item-title v-text="mail.title"></v-list-item-title>
                 <v-list-item-subtitle v-text="mail.from" class="text--primary"></v-list-item-subtitle>
-                <v-list-item-subtitle v-text="shortenedText"></v-list-item-subtitle>
-                
+                <v-list-item-subtitle v-text="shortenedText"></v-list-item-subtitle>   
             </v-list-item-content>
 
             <v-list-item-action @change.stop @click.stop @input.stop @submit.stop @mousedown.stop @select.stop>
@@ -16,13 +16,17 @@
                 overlap
                 v-if="isNewMail"
                 >
-                    
                 </v-badge>
                 <v-list-item-action-text v-text="dateString"></v-list-item-action-text>
                 <v-checkbox :on-icon="'mdi-star'" :off-icon="'mdi-star'" v-model="mail.favorite" color="#FFD600"></v-checkbox>
+                <v-row>
                 <v-btn v-if="!trash" icon color="red" @click="deleteMail(mail)">
                     <v-icon>mdi-delete</v-icon>
                 </v-btn>
+                <v-btn v-if="inbox" icon color="black" @click="replyMail(mail)">
+                    <v-icon>mdi-reply</v-icon>
+                </v-btn>
+                </v-row>
                 <v-btn v-if="trash" icon color="black" @click="returnMail(mail)">
                     <v-icon>mdi-undo</v-icon>
                 </v-btn>
@@ -40,7 +44,8 @@ export default {
     name: 'MailCard',
     props: {
         mail: Object,
-        trash: Boolean
+        trash: Boolean,
+        inbox: Boolean
     },
     data: () => ({
         selected: false,
@@ -48,6 +53,9 @@ export default {
     computed: {
         isNewMail() {
             return this.mail.new
+        },
+        isReply() {
+            return this.mail.reply
         },
         dateString() {
             let dateStr = "לפני ";
@@ -91,12 +99,16 @@ export default {
     }
     },
     methods: {
-        ...mapActions(['trashRemoveMail', 'inboxAddMail', 'outboxAddMail']),
+        ...mapActions(['trashRemoveMail', 
+                        'inboxAddMail', 
+                        'outboxAddMail', 
+                        'inboxRemoveMail']),
         chooseMail(mail) {
             mail.new = false;
             bus.$emit("chooseMail", mail);
         },
         deleteMail(mail) {
+            mail.reply = false;
             bus.$emit("deleteMail", mail);
         },
         returnMail(mail) {
@@ -113,6 +125,12 @@ export default {
                     break;
                 }
             }
+        },
+        replyMail(mail) {
+            mail.reply = true;
+            mail.from = 'Me';
+            this.inboxRemoveMail(mail);
+            this.outboxAddMail(mail);
         }
     }
 }

@@ -20,7 +20,7 @@ const routes = [
   },
   {
     path: '/trash',
-    name: 'Trasd',
+    name: 'Trash',
     component: Trash,
   },
   {

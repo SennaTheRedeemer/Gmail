@@ -1,6 +1,8 @@
 <template>
   <v-container>
-    <DisplayMails :items="getInbox" title="דואר נכנס" :trash="false" class="mails" :styleStr='"max-height: 40vh !important"'></DisplayMails>
+    <DisplayMails :items="displayMails" :inbox="true" title="דואר נכנס" :trash="false" class="mails" :styleStr='"max-height: 40vh !important"'>
+      <v-switch class="pt-0 mt-0" v-model="favoriteOnly" :label="`הראה מועדפים בלבד`"></v-switch>
+    </DisplayMails>
   </v-container>
 </template>
 
@@ -31,8 +33,17 @@ export default {
   },
   computed: {
     ...mapGetters(['getInbox']),
+    displayMails() {
+      if (this.favoriteOnly) {
+        return this.getInbox.filter(mail => {return mail.favorite})
+      }
+      else {
+        return this.getInbox;
+      }
+    }
   },
   data: () => ({
+    favoriteOnly: false,
     }),
 };
 </script>

@@ -109,8 +109,6 @@ import { mapGetters, mapActions } from 'vuex'
         ...mapActions(['outboxAddMail']),
       validate () {
         if(this.$refs.form.validate()){
-            // Process message
-            
             this.outboxAddMail({
                 title: this.title,
                 from: "Me",
@@ -123,7 +121,6 @@ import { mapGetters, mapActions } from 'vuex'
             this.reset();
             this.dialog = false;
             this.propAlert = true;
-            console.log(outbox)
         }
       },
       close() {

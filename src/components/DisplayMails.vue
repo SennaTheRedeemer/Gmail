@@ -3,12 +3,14 @@
         <v-row class="list">
             <v-col class="col-12 list" :style='styleStr'>
                 <v-list class="viewCard list overflow-y-auto fullHeight">
+                    <v-list-item><slot></slot></v-list-item>
                     <v-list-item-group v-model="selected" class="overflow-y-auto list" >
                     <Mail 
                     v-for="(mail, index) in items"
                     :key="index"
                     :mail="mail"
                     :trash="trash"
+                    :inbox="inbox"
                    >
                     </Mail>
                     </v-list-item-group>
@@ -28,7 +30,8 @@ export default {
         items: Array,
         title: String,
         styleStr: String,
-        trash: Boolean
+        trash: Boolean,
+        inbox: Boolean
     },
     methods: {
     },

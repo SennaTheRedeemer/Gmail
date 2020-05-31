@@ -13,7 +13,8 @@ export default new Vuex.Store({
         "date": 1590564794000,
         "favorite": true,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "try",
@@ -22,7 +23,8 @@ export default new Vuex.Store({
         "date": 1592564894000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "aer",
@@ -31,7 +33,8 @@ export default new Vuex.Store({
         "date": 1590564894000,
         "favorite": true,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -40,7 +43,8 @@ export default new Vuex.Store({
         "date": 1590564795000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -49,7 +53,8 @@ export default new Vuex.Store({
         "date": 1590564796000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -58,7 +63,8 @@ export default new Vuex.Store({
         "date": 1590564797000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -67,7 +73,8 @@ export default new Vuex.Store({
         "date": 1590564790000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -76,7 +83,8 @@ export default new Vuex.Store({
         "date": 1590564794200,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -85,7 +93,8 @@ export default new Vuex.Store({
         "date": 1590564795000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -94,7 +103,8 @@ export default new Vuex.Store({
         "date": 1590564794000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -103,7 +113,8 @@ export default new Vuex.Store({
         "date": 1590565784000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -112,7 +123,8 @@ export default new Vuex.Store({
         "date": 1590564794000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       }
     ],
     outbox: [
@@ -123,7 +135,8 @@ export default new Vuex.Store({
         "date": 1590564794000,
         "favorite": true,
         "new": false,
-        "position": "outbox"
+        "position": "outbox",
+        "reply": false
       },
       {
         "title": "try",
@@ -132,7 +145,8 @@ export default new Vuex.Store({
         "date": 1592564894000,
         "favorite": false,
         "new": false,
-        "position": "outbox"
+        "position": "outbox",
+        "reply": false
       },
       {
         "title": "aer",
@@ -141,7 +155,8 @@ export default new Vuex.Store({
         "date": 1590564894000,
         "favorite": true,
         "new": false,
-        "position": "outbox"
+        "position": "outbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -150,7 +165,8 @@ export default new Vuex.Store({
         "date": 1590564795000,
         "favorite": false,
         "new": false,
-        "position": "outbox"
+        "position": "outbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -159,7 +175,8 @@ export default new Vuex.Store({
         "date": 1590564796000,
         "favorite": false,
         "new": false,
-        "position": "outbox"
+        "position": "outbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -168,7 +185,8 @@ export default new Vuex.Store({
         "date": 1590564797000,
         "favorite": false,
         "new": false,
-        "position": "outbox"
+        "position": "outbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -177,7 +195,8 @@ export default new Vuex.Store({
         "date": 1590564790000,
         "favorite": false,
         "new": false,
-        "position": "outbox"
+        "position": "outbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -186,7 +205,8 @@ export default new Vuex.Store({
         "date": 1590564794200,
         "favorite": false,
         "new": false,
-        "position": "outbox"
+        "position": "outbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -195,7 +215,8 @@ export default new Vuex.Store({
         "date": 1590564795000,
         "favorite": false,
         "new": false,
-        "position": "outbox"
+        "position": "outbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -204,7 +225,8 @@ export default new Vuex.Store({
         "date": 1590564794000,
         "favorite": false,
         "new": false,
-        "position": "outbox"
+        "position": "outbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -213,7 +235,8 @@ export default new Vuex.Store({
         "date": 1590565784000,
         "favorite": false,
         "new": false,
-        "position": "outbox"
+        "position": "outbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -222,7 +245,8 @@ export default new Vuex.Store({
         "date": 1590564794000,
         "favorite": false,
         "new": false,
-        "position": "outbox"
+        "position": "outbox",
+        "reply": false
       }
     ],
     trash: [
@@ -233,7 +257,8 @@ export default new Vuex.Store({
         "date": 1590564794000,
         "favorite": true,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "try",
@@ -242,7 +267,8 @@ export default new Vuex.Store({
         "date": 1592564894000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "aer",
@@ -251,7 +277,8 @@ export default new Vuex.Store({
         "date": 1590564894000,
         "favorite": true,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -260,7 +287,8 @@ export default new Vuex.Store({
         "date": 1590564795000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -269,7 +297,8 @@ export default new Vuex.Store({
         "date": 1590564796000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -278,7 +307,8 @@ export default new Vuex.Store({
         "date": 1590564797000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -287,7 +317,8 @@ export default new Vuex.Store({
         "date": 1590564790000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -296,7 +327,8 @@ export default new Vuex.Store({
         "date": 1590564794200,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -305,7 +337,8 @@ export default new Vuex.Store({
         "date": 1590564795000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -323,7 +356,8 @@ export default new Vuex.Store({
         "date": 1590565784000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       },
       {
         "title": "Ofir",
@@ -332,7 +366,8 @@ export default new Vuex.Store({
         "date": 1590564794000,
         "favorite": false,
         "new": false,
-        "position": "inbox"
+        "position": "inbox",
+        "reply": false
       }
     ],
     selectedTitle: 'דואר נכנס',
