@@ -19,7 +19,6 @@ export default {
   mounted() {
     bus.$on("deleteMail", (mail) => {
       this.inboxRemoveMail(mail);
-      mail.position = "trash";
       mail.new = true;
       this.trashAddMail(mail);
     })
@@ -34,7 +33,6 @@ export default {
     ...mapGetters(['getInbox']),
   },
   data: () => ({
-      items: inbox
     }),
 };
 </script>

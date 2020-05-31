@@ -26,12 +26,10 @@ export default {
     ...mapGetters(['getOutbox']),
   },
   data: () => ({
-      outbox
     }),
   mounted() {
     bus.$on("deleteMail", (mail) => {
       this.outboxRemoveMail(mail);
-      mail.position = "trash";
       mail.new = true;
       this.trashAddMail(mail);
     })

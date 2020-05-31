@@ -32,7 +32,6 @@ export default {
     ...mapGetters(['getTrash']),
   },
   data: () => ({
-      items:  trash
     }),
 };
 </script>

@@ -23,6 +23,9 @@
                 <v-btn v-if="!trash" icon color="red" @click="deleteMail(mail)">
                     <v-icon>mdi-delete</v-icon>
                 </v-btn>
+                <v-btn v-if="trash" icon color="black" @click="returnMail(mail)">
+                    <v-icon>mdi-undo</v-icon>
+                </v-btn>
             </v-list-item-action>
         </v-list-item>
         <v-divider></v-divider>
@@ -31,6 +34,7 @@
 
 <script>
 import bus from "../eventbus"
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
     name: 'MailCard',
@@ -87,12 +91,28 @@ export default {
     }
     },
     methods: {
+        ...mapActions(['trashRemoveMail', 'inboxAddMail', 'outboxAddMail']),
         chooseMail(mail) {
             mail.new = false;
             bus.$emit("chooseMail", mail);
         },
         deleteMail(mail) {
             bus.$emit("deleteMail", mail);
+        },
+        returnMail(mail) {
+            mail.new = true;
+            switch(mail.position) {
+                case 'inbox': {
+                    this.trashRemoveMail(mail);
+                    this.inboxAddMail(mail);
+                    break;
+                }
+                case 'outbox': {
+                    this.trashRemoveMail(mail);
+                    this.outboxAddMail(mail);
+                    break;
+                }
+            }
         }
     }
 }
