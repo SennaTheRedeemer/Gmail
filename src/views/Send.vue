@@ -137,7 +137,8 @@ import { mapGetters, mapActions } from 'vuex'
                 date: new Date().getTime(),
                 favorite: false,
                 new: true,
-                position: "inbox"
+                position: "inbox",
+                id: this.getNewID
             })
             this.reset();
             this.dialog = false;

@@ -25,9 +25,6 @@ export default {
     ...mapActions(['trashRemoveMail'])
   },
   mounted() {
-    bus.$on("deleteMail", (mail) => {
-      this.trashRemoveMail(mail);
-    })
   },
   computed: {
     ...mapGetters(['getTrash', 'getFavoriteOnly']),

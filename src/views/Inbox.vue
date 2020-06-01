@@ -18,11 +18,6 @@ export default {
     DisplayMail
   },
   mounted() {
-    bus.$on("deleteMail", (mail) => {
-      this.inboxRemoveMail(mail);
-      mail.new = true;
-      this.trashAddMail(mail);
-    })
   },
   props: {
     title: String

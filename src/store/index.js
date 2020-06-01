@@ -11,7 +11,7 @@ export default new Vuex.Store({
     outbox,
     trash,
     currentIndex: 24,
-    selectedTitle: 'דואר נכנס',
+    selectedMail: undefined,
     displayMails: [],
     favoriteOnly: false,
   },
@@ -22,8 +22,8 @@ export default new Vuex.Store({
     getFavoriteOnly: (state) => {
       return state.favoriteOnly;
     },
-    getSelectedTitle: (state) => {
-      return state.selectedTitle;
+    getSelectedMail: (state) => {
+      return state.selectedMail;
     },
     getInbox: (state) => {
       return state.inbox;
@@ -40,8 +40,8 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    setTitle(state, title) {
-      state.selectedTitle = title;
+    setMail(state, mail) {
+      state.selectedMail = mail;
     },
     changeFavoriteOnly(state) {
       state.favoriteOnly = !state.favoriteOnly
@@ -73,10 +73,38 @@ export default new Vuex.Store({
         return currMail.id != mail.id;
       })
     },
+    removeMail(state, mail) {
+      if(state.inbox.find(currMail => currMail.id === mail.id)){
+        // Remove from inbox
+        state.inbox = state.inbox.filter(currMail => {
+          return currMail.id != mail.id;
+        })
+        // Add to trash
+        state.trash.unshift(mail);
+      }
+      else if (state.outbox.find(currMail => currMail.id === mail.id)) {
+        // Remove from outbox
+        state.outbox = state.outbox.filter(currMail => {
+          return currMail.id != mail.id;
+        })
+        // Add to trash
+        state.trash.unshift(mail);
+      }
+      else if (state.trash.find(currMail => currMail.id === mail.id)) {
+        // Remove from trash
+        state.trash = state.trash.filter(currMail => {
+          return currMail.id != mail.id;
+        })
+      }
+      // If its the selected, unselect
+      if(state.selectedMail && state.selectedMail.id === mail.id) {
+        state.selectedMail = undefined;
+      }
+    }
   },
   actions: {
-    setTitle ({commit}, title) {
-      commit('setTitle', title)
+    setSelectedMail ({commit}, mail) {
+      commit('setMail', mail)
     },
     setFavoriteOnly({commit}) {
       commit('changeFavoriteOnly');
@@ -102,6 +130,9 @@ export default new Vuex.Store({
     trashRemoveMail({commit}, mail) {
       commit('removeMailTrash', mail);
     },
+    removeMail({commit}, mail) {
+      commit('removeMail', mail);
+    }
   },
   modules: {
   },

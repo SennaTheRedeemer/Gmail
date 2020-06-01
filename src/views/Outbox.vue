@@ -37,11 +37,6 @@ export default {
   data: () => ({
     }),
   mounted() {
-    bus.$on("deleteMail", (mail) => {
-      this.outboxRemoveMail(mail);
-      mail.new = true;
-      this.trashAddMail(mail);
-    })
   },
 };
 </script>

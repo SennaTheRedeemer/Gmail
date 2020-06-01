@@ -101,14 +101,17 @@ export default {
         ...mapActions(['trashRemoveMail', 
                         'inboxAddMail', 
                         'outboxAddMail', 
-                        'inboxRemoveMail']),
+                        'inboxRemoveMail',
+                        'setSelectedMail',
+                        'removeMail']),
         chooseMail(mail) {
             mail.new = false;
-            bus.$emit("chooseMail", mail);
+            this.setSelectedMail(mail);
         },
         deleteMail(mail) {
             mail.reply = false;
-            bus.$emit("deleteMail", mail);
+            mail.new = true;
+            this.removeMail(mail);
         },
         restoreMail(mail) {
             mail.new = true;

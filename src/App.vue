@@ -2,10 +2,10 @@
   <v-app class="appView">
     <v-container>
       <v-row>
-        <v-col class="col-3 pt-3 pr-12">
+        <v-col class="col-3">
           <Menu :items="items"></Menu>
         </v-col>
-        <v-col class="col-9 pt-12 pl-12">
+        <v-col class="col-9 pt-12">
           <Content></Content>
         </v-col>
       </v-row> 
