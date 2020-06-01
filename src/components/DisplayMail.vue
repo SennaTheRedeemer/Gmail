@@ -10,7 +10,6 @@
 </template>
 <script>
 import BaseCard from "../components/BaseCard.vue"
-import bus from "../eventbus"
 import { mapGetters } from 'vuex'
 
 export default {

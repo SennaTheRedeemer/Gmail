@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import bus from "../eventbus"
 import { mapGetters, mapActions } from 'vuex'
 
 export default {

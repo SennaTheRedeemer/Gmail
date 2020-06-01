@@ -9,7 +9,6 @@
 import DisplayMails from '../components/DisplayMails.vue'
 import DisplayMail from '../components/DisplayMail.vue'
 import { mapGetters, mapActions } from 'vuex'
-import bus from "../eventbus"
 
 export default {
   name: 'MailBox',

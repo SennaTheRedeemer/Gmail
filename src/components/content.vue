@@ -11,7 +11,6 @@ import Outbox from "../views/Outbox.vue"
 import Trash from "../views/Trash.vue"
 import Send from "../views/Send"
 import Vue from 'vue';
-import bus from "../eventbus"
 import DisplayMail from "./DisplayMail"
 
 export default {
