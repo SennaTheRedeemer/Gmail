@@ -10,7 +10,7 @@ export default new Vuex.Store({
     inbox,
     outbox,
     trash,
-    currentIndex: 24,
+    currentIndex: 37,
     selectedMail: undefined,
     displayMails: [],
     favoriteOnly: false,
