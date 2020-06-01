@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-list-item :class="{ 'amber lighten-4': isReply }">
+        <v-list-item :class="{ 'amber lighten-4': isReply }" :key="key">
             <v-list-item-content  @click="chooseMail(mail)">
                 <v-list-item-title v-text="mail.title"></v-list-item-title>
                 <v-list-item-subtitle v-text="mail.from" class="text--primary"></v-list-item-subtitle>
@@ -17,7 +17,7 @@
                 >
                 </v-badge>
                 <v-list-item-action-text v-text="dateString"></v-list-item-action-text>
-                <v-checkbox :on-icon="'mdi-star'" :off-icon="'mdi-star'" v-model="mail.favorite" color="#FFD600"></v-checkbox>
+                <v-checkbox :on-icon="'mdi-star'" :off-icon="'mdi-star'" @change="setFavorite(!isFavorite)" v-model="isFavorite" color="#FFD600"></v-checkbox>
                 <v-row>
                     <v-btn v-if="!trash" icon color="red" @click="deleteMail(mail)">
                         <v-icon>mdi-delete</v-icon>
@@ -47,6 +47,7 @@ export default {
     },
     data: () => ({
         selected: false,
+        key: 0,
     }),
     computed: {
         isNewMail() {
@@ -94,6 +95,9 @@ export default {
         else {
             return this.mail.content;
         }
+    },
+    isFavorite() {
+       return this.mail.favorite;
     }
     },
     methods: {
@@ -102,7 +106,15 @@ export default {
                         'outboxAddMail', 
                         'inboxRemoveMail',
                         'setSelectedMail',
-                        'removeMail']),
+                        'removeMail',
+                        'changeFavorite']),
+        setFavorite(favoriteState) {
+            this.key++
+            this.changeFavorite({
+                mail: this.mail,
+                favoriteState: favoriteState
+            })
+        },
         chooseMail(mail) {
             mail.new = false;
             this.setSelectedMail(mail);

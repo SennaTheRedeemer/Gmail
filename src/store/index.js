@@ -40,6 +40,9 @@ export default new Vuex.Store({
     }
   },
   mutations: {
+    changeFavorite(state, {mail, favoriteState}) {
+      mail.favorite = favoriteState;
+    },
     setMail(state, mail) {
       state.selectedMail = mail;
     },
@@ -103,6 +106,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    changeFavorite({commit}, mailFavorite) {
+      commit('changeFavorite', mailFavorite)
+    },
     setSelectedMail ({commit}, mail) {
       commit('setMail', mail)
     },
