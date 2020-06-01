@@ -29,7 +29,7 @@ const routes = [
     component: Send,
   },
   {
-    path: '*',
+    path: '/',
     redirect: '/inbox'
   }
 ];

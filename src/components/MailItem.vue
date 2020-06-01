@@ -109,7 +109,7 @@ export default {
                         'removeMail',
                         'changeFavorite']),
         setFavorite(favoriteState) {
-            this.key++
+            this.key++;
             this.changeFavorite({
                 mail: this.mail,
                 favoriteState: favoriteState
